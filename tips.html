@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Expert electrical safety tips, energy saving advice, and hurricane preparedness guides for South Florida homeowners from ESU electricians.">
+    <title>Electrical Safety & Energy Saving Tips | ESU</title>
+    <link rel="canonical" href="https://esucorp.com/tips.html">
+
+    <!-- FAQ Schema for SEO rich snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is it safe to reset a breaker that keeps tripping?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. A tripping breaker is a safety device telling you something is wrong. Repeatedly resetting it can cause overheating and a fire. Call a licensed electrician to diagnose the root cause." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much can LED lighting save on my electric bill?",
+          "acceptedAnswer": { "@type": "Answer", "text": "LED bulbs use up to 90% less energy than incandescent bulbs and last 25 times longer. Replacing the most-used lights in your home can save $100–$200 per year on your electric bill." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I prepare my home's electrical system for hurricane season?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Key steps include: install a whole-home surge protector, have a standby generator installed, know where your main breaker is, and have your panel inspected by a licensed electrician before the season begins." }
+        }
+      ]
+    }
+    </script>
+
+    <meta property="og:title" content="Electrical Safety & Energy Saving Tips | ESU">
+    <meta property="og:description" content="Expert electrical safety tips, energy saving advice, and hurricane preparedness guides for South Florida homeowners from ESU electricians.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://esucorp.com/tips.html">
+    <meta property="og:image" content="https://esucorp.com/assets/images/team.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .tips-hero { background: var(--primary-navy); padding: 100px 5% 80px; text-align: center; color: white; }
+        .tips-hero h1 { color: white; font-size: 3.2rem; margin-bottom: 20px; }
+        .tips-hero p  { font-size: 1.2rem; opacity: 0.85; max-width: 650px; margin: 0 auto; }
+
+        /* Tip cards */
+        .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 25px; }
+        .tip-card {
+            background: white; border-radius: 12px; padding: 35px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+            border-top: 4px solid var(--primary-navy);
+            transition: all 0.3s ease;
+            display: flex; flex-direction: column; gap: 12px;
+        }
+        .tip-card:hover { transform: translateY(-6px); box-shadow: 0 14px 35px rgba(0,0,0,0.12); }
+        .tip-card-header { display: flex; align-items: center; gap: 15px; }
+        .tip-icon { width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; background: rgba(4,42,66,0.08); color: var(--primary-navy); }
+        .tip-icon.savings { background: rgba(241,144,28,0.12); color: var(--primary-orange); }
+        .tip-card h3 { font-size: 1.25rem; color: var(--primary-navy); margin: 0; }
+        .tip-card p  { color: #555; font-size: 1rem; line-height: 1.65; }
+        .tip-tag { display: inline-block; padding: 3px 12px; border-radius: 50px; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; background: rgba(4,42,66,0.07); color: var(--primary-navy); }
+        .tip-tag.savings { background: rgba(241,144,28,0.12); color: var(--primary-orange); }
+
+        /* Danger signs checklist */
+        .checklist-section { background: #fff4f4; border: 2px solid #e63946; border-radius: 16px; padding: 45px; max-width: 850px; margin: 0 auto; }
+        .checklist-item { display: flex; gap: 15px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #fde8e8; }
+        .checklist-item:last-child { border-bottom: none; }
+        .checklist-item i { color: #e63946; font-size: 1.3rem; margin-top: 3px; flex-shrink: 0; }
+        .checklist-item strong { color: var(--primary-navy); }
+        .checklist-item p { margin: 0; color: #555; font-size: 1rem; }
+
+        /* Seasonal guide cards */
+        .season-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+        .season-card { border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.08); transition: transform 0.3s; }
+        .season-card:hover { transform: translateY(-8px); }
+        .season-header { padding: 25px 25px 20px; color: white; }
+        .season-header i { font-size: 2.5rem; margin-bottom: 10px; }
+        .season-header h3 { color: white; font-size: 1.4rem; margin-bottom: 5px; }
+        .season-body { background: white; padding: 25px; }
+        .season-body ul { list-style: none; padding: 0; }
+        .season-body li { padding: 7px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.98rem; display: flex; gap: 10px; align-items: center; color: #444; }
+        .season-body li:last-child { border-bottom: none; }
+        .season-body li i { color: var(--primary-orange); font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-sticky-cta">
+        <a href="tel:+17869304300"><i class="fa-solid fa-phone"></i>&nbsp; Emergency? Call 786-930-4300</a>
+    </div>
+
+    <div class="top-bar">
+        <div class="contact-info">
+            <i class="fa-solid fa-phone"></i>&nbsp;<a href="tel:+17869304300">786-930-4300</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fa-solid fa-envelope"></i>&nbsp;<a href="mailto:info@esucorp.com">info@esucorp.com</a>
+        </div>
+        <div><i class="fa-solid fa-bolt" style="color:var(--primary-orange);"></i><strong style="color:white;"> 24/7 Emergency Service</strong></div>
+    </div>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="assets/images/logo.png" class="logo-img" alt="ESU — Electrical Services Unlimited"></a>
+            <button class="mobile-menu-btn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="projects.html">PROJECTS</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="tips.html" class="active">TIPS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+17869304300" class="btn btn-primary"><i class="fa-solid fa-phone"></i>&nbsp; 786-930-4300</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="tips-hero">
+        <div class="reveal">
+            <div class="badge-pill">From Licensed Electricians — Not the Internet</div>
+            <h1>Electrical Tips from<br>Your South Florida Experts</h1>
+            <p>Real, actionable advice to keep your home safe, cut your electric bill, and prepare for Florida's hurricane season — straight from our licensed technicians.</p>
+        </div>
+    </div>
+
+    <!-- ===== ALL TIPS SECTION ===== -->
+    <section class="section bg-light">
+        <h2 class="section-title reveal">Savings, Safety & Storm Tips</h2>
+        <div class="tips-grid reveal">
+
+            <!-- SAVINGS TIPS -->
+            <div class="tip-card">
+                <div class="tip-card-header">
+                    <div class="tip-icon savings"><i class="fa-regular fa-lightbulb"></i></div>
+                    <div><span class="tip-tag savings">Energy Savings</span><h3>Switch Every Bulb to LED</h3></div>
+                </div>
+                <p>LED bulbs use up to <strong>90% less energy</strong> than incandescent bulbs and last 25 times longer. Replacing the 10 most-used lights in your home can save <strong>$100–$200 per year</strong> on your FPL bill. The payback period is under 6 months.</p>
+            </div>
+
+            <div class="tip-card">
+                <div class="tip-card-header">
+                    <div class="tip-icon savings"><i class="fa-solid fa-plug-circle-exclamation"></i></div>
+                    <div><span class="tip-tag savings">Energy Savings</span><h3>Kill "Vampire" Power Draws</h3></div>
+                </div>
+                <p>Electronics plugged into the wall draw power even when fully off — this is called "standby power" or vampire load. TVs, gaming consoles, coffee makers, and phone chargers can add up to <strong>10% of your monthly electric bill</strong>. Use smart power strips to cut all devices at once.</p>
+            </div>
+
+            <div class="tip-card">
+                <div class="tip-card-header">
+                    <div class="tip-icon savings"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+                    <div><span class="tip-tag savings">Energy Savings</span><h3>Set Your AC Thermostat Smarter</h3></div>
+                </div>
+                <p>In Florida, your AC runs almost year-round. Setting your thermostat just <strong>2°F higher</strong> (from 74°F to 76°F) when you're home can reduce your cooling bill by up to 14%. Install a programmable smart thermostat to automatically set back the temperature when you leave.</p>
+            </div>
+
+            <div class="tip-card">
+                <div class="tip-card-header">
+                    <div class="tip-icon savings"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                    <div><span class="tip-tag savings">Energy Savings</span><h3>Run Appliances During Off-Peak Hours</h3></div>
+                </div>
+                <p>FPL's Time of Use rates are highest from <strong>6 AM – 9 AM and 6 PM – 9 PM</strong> on weekdays. Running your dishwasher, washing machine, and dryer after 9 PM or before 6 AM can noticeably reduce your bill each month with zero effort.</p>
+            </div>
+
+            <!-- SAFETY TIPS -->
+            <div class="tip-card safety">
+                <div class="tip-card-header">
+                    <div class="tip-icon safety"><i class="fa-solid fa-toggle-off"></i></div>
+                    <div><span class="tip-tag safety">Safety Warning</span><h3>Never Ignore a Tripping Breaker</h3></div>
+                </div>
+                <p>A breaker trips to protect you from an overload or short circuit. If it trips immediately after resetting, <strong>do not force it back on</strong>. The wires inside your walls could be overheating and melting their insulation — a direct precursor to an electrical fire. Call us immediately.</p>
+            </div>
+
+            <div class="tip-card safety">
+                <div class="tip-card-header">
+                    <div class="tip-icon safety"><i class="fa-solid fa-droplet"></i></div>
+                    <div><span class="tip-tag safety">Safety Warning</span><h3>Test Your GFCI Outlets Monthly</h3></div>
+                </div>
+                <p>GFCI outlets (with the Test/Reset buttons) protect you from electrocution near water in kitchens, bathrooms, and garages. Press the <strong>TEST</strong> button monthly — if a nearby outlet loses power, it's working. If it doesn't, the device has failed and must be replaced immediately.</p>
+            </div>
+
+            <div class="tip-card safety">
+                <div class="tip-card-header">
+                    <div class="tip-icon safety"><i class="fa-solid fa-fire"></i></div>
+                    <div><span class="tip-tag safety">Safety Warning</span><h3>Know These Electrical Fire Warning Signs</h3></div>
+                </div>
+                <p>Call an electrician immediately if you notice: burning plastic smell from outlets, outlets that are warm to the touch, visible scorch marks around switch plates, flickering lights throughout the house, or if your breaker panel feels warm. These are all signs of active electrical danger.</p>
+            </div>
+
+            <div class="tip-card safety">
+                <div class="tip-card-header">
+                    <div class="tip-icon safety"><i class="fa-solid fa-plug"></i></div>
+                    <div><span class="tip-tag safety">Safety Warning</span><h3>Don't Overload Your Outlets</h3></div>
+                </div>
+                <p>Plugging too many devices into a single outlet via an adapter creates dangerous heat buildup that can melt wiring and cause fires. If you constantly need more outlets in a room, have an electrician install additional circuits — it's far safer and cheaper than dealing with a house fire.</p>
+            </div>
+
+            <!-- HURRICANE TIPS -->
+            <div class="tip-card hurricane">
+                <div class="tip-card-header">
+                    <div class="tip-icon hurricane"><i class="fa-solid fa-shield"></i></div>
+                    <div><span class="tip-tag hurricane">Hurricane Prep</span><h3>Install Whole-Home Surge Protection</h3></div>
+                </div>
+                <p>Florida sees more lightning per year than any other state. A surge from a nearby strike can destroy your HVAC, refrigerator, washer, and smart home devices in milliseconds. A panel-level whole-home surge protector stops that voltage before it reaches a single device. <strong>Installation takes 2 hours.</strong></p>
+            </div>
+
+            <div class="tip-card hurricane">
+                <div class="tip-card-header">
+                    <div class="tip-icon hurricane"><i class="fa-solid fa-car-battery"></i></div>
+                    <div><span class="tip-tag hurricane">Hurricane Prep</span><h3>Get a Standby Generator Before Season</h3></div>
+                </div>
+                <p>Generator stock sells out <strong>weeks before every major storm</strong>. Don't scramble during a hurricane watch. A permanently installed standby generator turns on automatically during outages and runs your central AC, refrigerator, and entire home. Book your installation now, before the rush.</p>
+            </div>
+
+            <div class="tip-card hurricane">
+                <div class="tip-card-header">
+                    <div class="tip-icon hurricane"><i class="fa-solid fa-wind"></i></div>
+                    <div><span class="tip-tag hurricane">Hurricane Prep</span><h3>Know Your Main Breaker Location</h3></div>
+                </div>
+                <p>Before a storm, every adult in your household should know exactly where the main electrical panel is and how to shut off the main breaker. If flooding is imminent and water is entering the home, <strong>cut the main breaker immediately</strong> to prevent electrocution and further electrical damage.</p>
+            </div>
+
+            <div class="tip-card hurricane">
+                <div class="tip-card-header">
+                    <div class="tip-icon hurricane"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <div><span class="tip-tag hurricane">Hurricane Prep</span><h3>Schedule a Pre-Season Electrical Inspection</h3></div>
+                </div>
+                <p>Have a licensed electrician inspect your panel, GFCI outlets, and all outdoor wiring before June 1. Damaged weatherproof covers, corroded panels, and loose connections are dramatically worsened by storm conditions and flooding. Find problems before they become emergencies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DANGER SIGNS CHECKLIST ===== -->
+    <section class="section">
+        <div class="reveal" style="text-align: center; margin-bottom: 50px;">
+            <h2 class="section-title">9 Electrical Warning Signs That Need Immediate Attention</h2>
+            <p style="font-size: 1.15rem; color: #555; max-width: 650px; margin: -30px auto 0;">If your home has any of these issues, don't wait. Call us today for a safety inspection.</p>
+        </div>
+        <div class="checklist-section reveal">
+            <div class="checklist-item">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <div><strong>Lights flickering throughout the house.</strong> <p>Not just one fixture — widespread flickering means a loose main connection or failing panel. Serious fire risk.</p></div>
+            </div>
+            <div class="checklist-item">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <div><strong>Burning smell from outlets, switches, or panel.</strong> <p>The smell of burning plastic is melting wire insulation. This is an active electrical fire risk. Shut off the area's breaker immediately and call us.</p></div>
+            </div>
+            <div class="checklist-item">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <div><strong>Outlets or switch plates that are warm or discolored.</strong> <p>Heat at an outlet means arcing or overloading in the wiring behind the wall — a textbook precursor to an electrical fire.</p></div>
+            </div>
+            <div class="checklist-item">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <div><strong>Breakers that trip immediately after being reset.</strong> <p>The breaker is doing its job. Forcing it back on repeatedly will cause the wiring to overheat and eventually catch fire.</p></div>
+            </div>
+            <div class="checklist-item">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <div><strong>Sparks when plugging something in.</strong> <p>A small, brief spark is usually normal. A large spark, repeated sparks, or sparks accompanied by a popping sound means you have a wiring fault.</p></div>
+            </div>
+            <div class="checklist-item">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <div><strong>Your home still has aluminum wiring or cloth wiring.</strong> <p>Aluminum wiring was used in homes built 1965–1973 and is a serious fire hazard. Have it assessed and addressed immediately.</p></div>
+            </div>
+            <div class="checklist-item">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <div><strong>Your electrical panel is a Federal Pacific (FPE) or Zinsco brand.</strong> <p>These panels are known to fail silently during overloads, causing house fires. Replace immediately.</p></div>
+            </div>
+            <div class="checklist-item">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <div><strong>Extension cords used as permanent wiring.</strong> <p>Extension cords are for temporary use only. Running them under rugs or through walls is a severe fire hazard and a code violation.</p></div>
+            </div>
+            <div class="checklist-item">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <div><strong>Your panel has breakers labeled with tape.</strong> <p>Handwritten tape labels on breakers indicate previous DIY work that may not be up to code. Have it inspected by a licensed electrician.</p></div>
+            </div>
+        </div>
+        <div class="reveal" style="text-align: center; margin-top: 50px;">
+            <a href="tel:+17869304300" class="btn btn-primary" style="font-size:1.2rem; padding:18px 45px;"><i class="fa-solid fa-phone"></i>&nbsp; Call for a Safety Inspection — 786-930-4300</a>
+        </div>
+    </section>
+
+    <!-- ===== SEASONAL PREP GUIDE ===== -->
+    <section class="section bg-light">
+        <h2 class="section-title reveal">South Florida Seasonal Electrical Checklist</h2>
+        <div class="season-grid reveal">
+            <div class="season-card">
+                <div class="season-header" style="background: linear-gradient(135deg, #023e8a, #0077b6);">
+                    <i class="fa-solid fa-wind"></i>
+                    <h3>Before Hurricane Season<br><small style="font-weight:400; font-size:0.9rem;">(May–June)</small></h3>
+                </div>
+                <div class="season-body">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Schedule panel inspection</li>
+                        <li><i class="fa-solid fa-check"></i> Install whole-home surge protector</li>
+                        <li><i class="fa-solid fa-check"></i> Book standby generator install</li>
+                        <li><i class="fa-solid fa-check"></i> Check all outdoor weatherproof covers</li>
+                        <li><i class="fa-solid fa-check"></i> Test all GFCI outlets</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="season-card">
+                <div class="season-header" style="background: linear-gradient(135deg, #f48c06, #e85d04);">
+                    <i class="fa-solid fa-sun"></i>
+                    <h3>Summer Energy Savings<br><small style="font-weight:400; font-size:0.9rem;">(June–September)</small></h3>
+                </div>
+                <div class="season-body">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Switch to LED throughout home</li>
+                        <li><i class="fa-solid fa-check"></i> Set AC to 76°F when home</li>
+                        <li><i class="fa-solid fa-check"></i> Install ceiling fans to reduce AC use</li>
+                        <li><i class="fa-solid fa-check"></i> Unplug unused electronics</li>
+                        <li><i class="fa-solid fa-check"></i> Run appliances after 9 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="season-card">
+                <div class="season-header" style="background: linear-gradient(135deg, #2d6a4f, #40916c);">
+                    <i class="fa-solid fa-leaf"></i>
+                    <h3>Year-End Home Check<br><small style="font-weight:400; font-size:0.9rem;">(October–December)</small></h3>
+                </div>
+                <div class="season-body">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Test all smoke & CO detectors</li>
+                        <li><i class="fa-solid fa-check"></i> Inspect holiday light cords for damage</li>
+                        <li><i class="fa-solid fa-check"></i> Have outdoor lighting serviced</li>
+                        <li><i class="fa-solid fa-check"></i> Check generator oil & battery</li>
+                        <li><i class="fa-solid fa-check"></i> Review panel for any warning signs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="section" style="background: var(--primary-navy); text-align: center;">
+        <div class="reveal">
+            <h2 style="color:white; font-size:2.8rem; margin-bottom:15px;">A Question Not Answered Here?</h2>
+            <p style="color:rgba(255,255,255,0.85); font-size:1.2rem; max-width:600px; margin: 0 auto 40px;">Call us directly and one of our licensed electricians will answer your question over the phone — free of charge.</p>
+            <a href="tel:+17869304300" class="btn btn-primary" style="font-size:1.3rem; padding:18px 45px; box-shadow:0 10px 30px rgba(241,144,28,0.4);">
+                <i class="fa-solid fa-phone"></i>&nbsp; Call 786-930-4300
+            </a>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse ESU's project portfolio — panel upgrades, generator installs, recessed lighting, EV chargers, and commercial wiring across Miami and South Florida. Real work, real results.">
+    <title>Our Work | ESU Project Portfolio — Miami Electrician</title>
+    <link rel="canonical" href="https://esucorp.com/projects.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageGallery",
+      "name": "ESU Project Portfolio",
+      "description": "Portfolio of electrical projects completed by ESU across South Florida — panel upgrades, generator installations, lighting, EV chargers, and commercial wiring.",
+      "url": "https://esucorp.com/projects.html",
+      "author": {
+        "@type": "LocalBusiness",
+        "name": "Electrical Services Unlimited",
+        "telephone": "+17869304300",
+        "url": "https://esucorp.com"
+      }
+    }
+    </script>
+
+    <meta property="og:title" content="Our Work | ESU Project Portfolio — Miami Electrician">
+    <meta property="og:description" content="Browse ESU's project portfolio — panel upgrades, generator installs, recessed lighting, EV chargers, and commercial wiring across Miami and South Florida.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://esucorp.com/projects.html">
+    <meta property="og:image" content="https://esucorp.com/assets/images/team.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* ===== HERO ===== */
+        .projects-hero {
+            background: var(--primary-navy);
+            padding: 100px 5% 70px;
+            text-align: center;
+            color: white;
+        }
+        .projects-hero h1 { color: white; font-size: 3rem; margin-bottom: 15px; }
+        .projects-hero p { font-size: 1.15rem; opacity: 0.85; max-width: 580px; margin: 0 auto; }
+        .projects-hero-meta { margin-top: 35px; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; font-size: 0.98rem; font-weight: 600; color: rgba(255,255,255,0.75); }
+        .projects-hero-meta span i { color: var(--primary-orange); margin-right: 6px; }
+
+        /* ===== FILTER BAR ===== */
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 30px 5%;
+            background: white;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 72px;
+            z-index: 100;
+        }
+        .filter-btn {
+            padding: 9px 22px;
+            border-radius: 50px;
+            border: 2px solid #ddd;
+            background: white;
+            color: #555;
+            font-weight: 700;
+            font-size: 0.92rem;
+            cursor: pointer;
+            transition: all 0.25s;
+            font-family: var(--font-heading);
+        }
+        .filter-btn.active,
+        .filter-btn:hover { background: var(--primary-navy); color: white; border-color: var(--primary-navy); }
+
+        /* ===== PORTFOLIO GRID ===== */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
+        .portfolio-item {
+            border-radius: 10px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .portfolio-item:hover { transform: translateY(-6px); box-shadow: 0 14px 38px rgba(0,0,0,0.14); }
+        .portfolio-item.hidden { display: none; }
+
+        .portfolio-img-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-navy), #0a3d5a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .portfolio-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .portfolio-item:hover .portfolio-img-wrap img { transform: scale(1.04); }
+
+        /* Graceful placeholder when image file doesn't exist yet */
+        .portfolio-img-wrap.no-image img { display: none; }
+        .portfolio-img-wrap.no-image::before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            content: "\f03e";
+            color: var(--primary-orange);
+            font-size: 2.8rem;
+        }
+        .portfolio-img-wrap.no-image::after {
+            content: attr(data-label);
+            position: absolute;
+            bottom: 14px;
+            left: 0; right: 0;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.82rem;
+            font-family: var(--font-body);
+        }
+
+        /* Hover overlay */
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(4,42,66,0.88) 0%, transparent 55%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding: 18px;
+        }
+        .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+        .portfolio-expand-icon {
+            width: 40px; height: 40px;
+            background: var(--primary-orange);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 1rem;
+        }
+
+        /* Caption */
+        .portfolio-caption { padding: 15px 18px; }
+        .portfolio-caption h4 { font-size: 1rem; color: var(--primary-navy); margin: 0 0 8px; }
+        .portfolio-caption-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .portfolio-tag {
+            font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 50px;
+            background: rgba(241,144,28,0.12); color: var(--primary-orange);
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .portfolio-loc { font-size: 0.8rem; color: #777; display: flex; align-items: center; gap: 4px; }
+        .portfolio-loc i { color: var(--primary-orange); font-size: 0.72rem; }
+
+        /* ===== LIGHTBOX ===== */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.93);
+            z-index: 9000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .lightbox-overlay.open { display: flex; }
+        .lightbox-inner { position: relative; max-width: 1000px; width: 100%; }
+        .lightbox-inner img { width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; display: block; }
+        .lightbox-caption { color: rgba(255,255,255,0.8); text-align: center; margin-top: 14px; font-size: 0.98rem; }
+        .lightbox-close {
+            position: absolute; top: -44px; right: 0;
+            background: rgba(255,255,255,0.15); border: none; color: white;
+            font-size: 1.6rem; cursor: pointer; opacity: 0.9;
+            transition: opacity 0.2s; width: 44px; height: 44px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+        }
+        .lightbox-close:hover { opacity: 1; }
+
+        /* ===== MID-PAGE CTA STRIP ===== */
+        .portfolio-cta-strip { background: var(--primary-orange); padding: 50px 5%; text-align: center; }
+        .portfolio-cta-strip h3 { color: white; font-size: 1.9rem; margin-bottom: 10px; }
+        .portfolio-cta-strip p { color: rgba(255,255,255,0.9); margin-bottom: 28px; font-size: 1.05rem; max-width: 520px; margin-left: auto; margin-right: auto; margin-bottom: 28px; }
+
+        /* ===== EMPTY STATE ===== */
+        .empty-state { display: none; text-align: center; padding: 60px 20px; color: #bbb; }
+        .empty-state i { font-size: 2.8rem; margin-bottom: 12px; display: block; }
+
+        @media (max-width: 768px) {
+            .portfolio-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .projects-hero h1 { font-size: 2.2rem; }
+            .filter-bar { top: 76px; padding: 16px 4%; gap: 8px; }
+            .filter-btn { padding: 7px 16px; font-size: 0.85rem; }
+        }
+        @media (max-width: 480px) {
+            .portfolio-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="mobile-sticky-cta">
+        <a href="tel:+17869304300"><i class="fa-solid fa-phone"></i>&nbsp; Emergency? Call 786-930-4300</a>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="contact-info">
+            <i class="fa-solid fa-phone"></i>&nbsp;<a href="tel:+17869304300">786-930-4300</a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fa-solid fa-envelope"></i>&nbsp;<a href="mailto:info@esucorp.com">info@esucorp.com</a>
+        </div>
+        <div>
+            <i class="fa-solid fa-bolt" style="color: var(--primary-orange);"></i>
+            <strong style="color:white;"> 24/7 Emergency Service</strong>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" class="logo-img" alt="ESU — Electrical Services Unlimited">
+            </a>
+            <button class="mobile-menu-btn" aria-label="Open navigation menu"><i class="fa-solid fa-bars"></i></button>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="projects.html" class="active">PROJECTS</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="tips.html">TIPS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+17869304300" class="btn btn-primary"><i class="fa-solid fa-phone"></i>&nbsp; 786-930-4300</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="projects-hero">
+        <h1>Our Work Across South Florida</h1>
+        <p>Over 2,500 jobs completed for homeowners and businesses from Homestead to Aventura. Here's a look at what we do.</p>
+        <div class="projects-hero-meta">
+            <span><i class="fa-solid fa-star"></i>4.9/5 on Google — 85 Reviews</span>
+            <span><i class="fa-solid fa-certificate"></i>State Certified EC13007781</span>
+            <span><i class="fa-solid fa-shield-halved"></i>Fully Licensed & Insured</span>
+        </div>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="panels">Panel Upgrades</button>
+        <button class="filter-btn" data-filter="lighting">Lighting</button>
+        <button class="filter-btn" data-filter="generators">Generators</button>
+        <button class="filter-btn" data-filter="ev">EV Chargers</button>
+        <button class="filter-btn" data-filter="commercial">Commercial</button>
+    </div>
+
+    <!--
+    =====================================================================
+    HOW TO ADD YOUR PHOTOS:
+    1. Create the folder: assets/images/projects/
+    2. Add your .jpg or .webp photos to that folder
+    3. In each portfolio-item below, update the src="" on the <img> tag
+       to match your filename (e.g. src="assets/images/projects/my-photo.jpg")
+    4. Update the alt="" text to describe what's shown in the photo
+    5. The onclick="openLightbox(...)" also needs the same src and a label
+
+    To ADD a new project, copy any portfolio-item block and paste it.
+    Change data-category to one of: panels | lighting | generators | ev | commercial | repairs
+
+    Until you add a real image, a styled placeholder will show automatically.
+    =====================================================================
+    -->
+
+    <!-- Portfolio Grid -->
+    <section class="section bg-light" style="padding-top: 50px;">
+        <div class="portfolio-grid reveal" id="portfolio-grid">
+
+            <!-- ── PANEL UPGRADES ──────────────────────────────────── -->
+            <div class="portfolio-item" data-category="panels"
+                 onclick="openLightbox('assets/images/electrical_panel.png', '200-Amp Panel Replacement — Coral Gables')">
+                <div class="portfolio-img-wrap">
+                    <img src="assets/images/electrical_panel.png"
+                         alt="200-amp electrical panel upgrade in Coral Gables, FL installed by ESU">
+                    <div class="portfolio-overlay"><div class="portfolio-expand-icon"><i class="fa-solid fa-expand"></i></div></div>
+                </div>
+                <div class="portfolio-caption">
+                    <h4>200-Amp Panel Replacement</h4>
+                    <div class="portfolio-caption-meta">
+                        <span class="portfolio-tag">Panel Upgrade</span>
+                        <span class="portfolio-loc"><i class="fa-solid fa-location-dot"></i>Coral Gables</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="panels"
+                 onclick="openLightbox('assets/images/electrical_panel.png', 'FPE Panel Replacement — Homestead')">
+                <div class="portfolio-img-wrap">
+                    <img src="assets/images/electrical_panel.png"
+                         alt="Federal Pacific FPE electrical panel replacement by ESU in Homestead, FL">
+                    <div class="portfolio-overlay"><div class="portfolio-expand-icon"><i class="fa-solid fa-expand"></i></div></div>
+                </div>
+                <div class="portfolio-caption">
+                    <h4>FPE Panel Replacement</h4>
+                    <div class="portfolio-caption-meta">
+                        <span class="portfolio-tag">Panel Upgrade</span>
+                        <span class="portfolio-loc"><i class="fa-solid fa-location-dot"></i>Homestead</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="panels"
+                 onclick="openLightbox('assets/images/electrician.png', 'Commercial Panel Upgrade — Hialeah')">
+                <div class="portfolio-img-wrap">
+                    <img src="assets/images/electrician.png"
+                         alt="Commercial electrical panel upgrade in Hialeah, FL by ESU">
+                    <div class="portfolio-overlay"><div class="portfolio-expand-icon"><i class="fa-solid fa-expand"></i></div></div>
+                </div>
+                <div class="portfolio-caption">
+                    <h4>Commercial Panel Upgrade</h4>
+                    <div class="portfolio-caption-meta">
+                        <span class="portfolio-tag">Panel Upgrade</span>
+                        <span class="portfolio-loc"><i class="fa-solid fa-location-dot"></i>Hialeah</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── LIGHTING ─────────────────────────────────────────── -->
+            <div class="portfolio-item" data-category="lighting"
+                 onclick="openLightbox('assets/images/hero_bg.png', 'Recessed LED Lighting — Doral')">
+                <div class="portfolio-img-wrap">
+                    <img src="assets/images/hero_bg.png"
+                         alt="Recessed LED lighting installation in Doral, FL by ESU">
+                    <div class="portfolio-overlay"><div class="portfolio-expand-icon"><i class="fa-solid fa-expand"></i></div></div>
+                </div>
+                <div class="portfolio-caption">
+                    <h4>Recessed LED Lighting</h4>
+                    <div class="portfolio-caption-meta">
+                        <span class="portfolio-tag">Lighting</span>
+                        <span class="portfolio-loc"><i class="fa-solid fa-location-dot"></i>Doral</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="lighting"
+                 onclick="openLightbox('assets/images/hero_bg.png', 'Landscape Lighting — Miami Lakes')">
+                <div class="portfolio-img-wrap">
+                    <img src="assets/images/hero_bg.png"
+                         alt="Outdoor landscape lighting installation in Miami Lakes, FL by ESU">
+                    <div class="portfolio-overlay"><div class="portfolio-expand-icon"><i class="fa-solid fa-expand"></i></div></div>
+                </div>
+                <div class="portfolio-caption">
+                    <h4>Landscape Lighting</h4>
+                    <div class="portfolio-caption-meta">
+                        <span class="portfolio-tag">Lighting</span>
+                        <span class="portfolio-loc"><i class="fa-solid fa-location-dot"></i>Miami Lakes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="lighting"
+                 onclick="openLightbox('assets/images/electrician.png', 'Outdoor Security Lighting — Kendall')">
+                <div class="portfolio-img-wrap">
+                    <img src="assets/images/electrician.png"
+                         alt="Outdoor security and flood lighting in Kendall, FL by ESU">
+                    <div class="portfolio-overlay"><div class="portfolio-expand-icon"><i class="fa-solid fa-expand"></i></div></div>
+                </div>
+                <div class="portfolio-caption">
+                    <h4>Outdoor Security Lighting</h4>
+                    <div class="portfolio-caption-meta">
+                        <span class="portfolio-tag">Lighting</span>
+                        <span class="portfolio-loc"><i class="fa-solid fa-location-dot"></i>Kendall</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── GENERATORS ──────────────────────────────────────── -->
+            <div class="portfolio-item" data-category="generators"
+                 onclick="openLightbox('assets/images/electrical_panel.png', 'Generac Standby Generator — Kendall')">
+                <div class="portfolio-img-wrap">
+                    <img src="assets/images/electrical_panel.png"
+                         alt="Generac whole-home standby generator installation in Kendall, FL by ESU">
+                    <div class="portfolio-overlay"><div class="portfolio-expand-icon"><i class="fa-solid fa-expand"></i></div></div>
+                </div>
+                <div class="portfolio-caption">
+                    <h4>Generac Standby Generator</h4>
+                    <div class="portfolio-caption-meta">
+                        <span class="portfolio-tag">Generator</span>
+                        <span class="portfolio-loc"><i class="fa-solid fa-location-dot"></i>Kendall</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="generators"
+                 onclick="openLightbox('assets/images/electrician.png', 'Kohler Generator Install — Miami')">
+                <div class="portfolio-img-wrap">
+                    <img src="assets/images/electrician.png"
+                         alt="Kohler whole-home generator installation in Miami, FL by ESU">
+                    <div class="portfolio-overlay"><div class="portfolio-expand-icon"><i class="fa-solid fa-expand"></i></div></div>
+                </div>
+                <div class="portfolio-caption">
+                    <h4>Kohler Generator Install</h4>
+                    <div class="portfolio-caption-meta">
+                        <span class="portfolio-tag">Generator</span>
+                        <span class="portfolio-loc"><i class="fa-solid fa-location-dot"></i>Miami</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── EV CHARGERS ─────────────────────────────────────── -->
+            <div class="portfolio-item" data-category="ev"
+                 onclick="openLightbox('assets/images/electrical_panel.png', 'Level 2 EV Charger — Coral Gables')">
+                <div class="portfolio-img-wrap">
+                    <img src="assets/images/electrical_panel.png"
+                         alt="Level 2 EV charger installation in Coral Gables, FL by ESU">
+                    <div class="portfolio-overlay"><div class="portfolio-expand-icon"><i class="fa-solid fa-expand"></i></div></div>
+                </div>
+                <div class="portfolio-caption">
+                    <h4>Level 2 EV Charger</h4>
+                    <div class="portfolio-caption-meta">
+                        <span class="portfolio-tag">EV Charger</span>
+                        <span class="portfolio-loc"><i class="fa-solid fa-location-dot"></i>Coral Gables</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="ev"
+                 onclick="openLightbox('assets/images/electrician.png', 'Tesla Wall Connector — Doral')">
+                <div class="portfolio-img-wrap">
+                    <img src="assets/images/electrician.png"
+                         alt="Tesla Wall Connector EV charger installation in Doral, FL by ESU">
+                    <div class="portfolio-overlay"><div class="portfolio-expand-icon"><i class="fa-solid fa-expand"></i></div></div>
+                </div>
+                <div class="portfolio-caption">
+                    <h4>Tesla Wall Connector</h4>
+                    <div class="portfolio-caption-meta">
+                        <span class="portfolio-tag">EV Charger</span>
+                        <span class="portfolio-loc"><i class="fa-solid fa-location-dot"></i>Doral</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── COMMERCIAL ──────────────────────────────────────── -->
+            <div class="portfolio-item" data-category="commercial"
+                 onclick="openLightbox('assets/images/electrician.png', 'Office Fit-Out Wiring — Doral')">
+                <div class="portfolio-img-wrap">
+                    <img src="assets/images/electrician.png"
+                         alt="Commercial office electrical wiring and fit-out in Doral, FL by ESU">
+                    <div class="portfolio-overlay"><div class="portfolio-expand-icon"><i class="fa-solid fa-expand"></i></div></div>
+                </div>
+                <div class="portfolio-caption">
+                    <h4>Office Fit-Out Wiring</h4>
+                    <div class="portfolio-caption-meta">
+                        <span class="portfolio-tag">Commercial</span>
+                        <span class="portfolio-loc"><i class="fa-solid fa-location-dot"></i>Doral</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="commercial"
+                 onclick="openLightbox('assets/images/hero_bg.png', 'Retail Lighting — Miami Gardens')">
+                <div class="portfolio-img-wrap">
+                    <img src="assets/images/hero_bg.png"
+                         alt="Retail store commercial lighting installation in Miami Gardens, FL by ESU">
+                    <div class="portfolio-overlay"><div class="portfolio-expand-icon"><i class="fa-solid fa-expand"></i></div></div>
+                </div>
+                <div class="portfolio-caption">
+                    <h4>Retail Lighting Installation</h4>
+                    <div class="portfolio-caption-meta">
+                        <span class="portfolio-tag">Commercial</span>
+                        <span class="portfolio-loc"><i class="fa-solid fa-location-dot"></i>Miami Gardens</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Empty state shown when a filter has no items -->
+        <div class="empty-state" id="empty-state">
+            <i class="fa-regular fa-image"></i>
+            <p>No projects in this category yet.<br><a href="contact.html" style="color: var(--primary-orange); font-weight: 700;">Contact us to get started.</a></p>
+        </div>
+    </section>
+
+    <!-- Mid-page CTA -->
+    <div class="portfolio-cta-strip">
+        <h3>Want Your Home or Business in Our Portfolio?</h3>
+        <p>We're ready to take on your next electrical project — big or small.</p>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="tel:+17869304300" class="btn" style="background: white; color: var(--primary-navy); font-size: 1rem; padding: 14px 35px;">
+                <i class="fa-solid fa-phone"></i>&nbsp; Call 786-930-4300
+            </a>
+            <a href="#get-quote" class="btn" style="background: transparent; color: white; border: 2px solid white; border-radius: 50px; font-size: 1rem; padding: 14px 35px; font-weight: 700;">
+                Request a Free Estimate
+            </a>
+        </div>
+    </div>
+
+    <!-- Lead Form -->
+    <section class="section" id="get-quote">
+        <div style="max-width: 820px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 12px;">Ready to Start Your Project?</h2>
+            <p style="color: #666; margin-bottom: 35px; font-size: 1.05rem;">Fill out the form and we'll get back to you within the hour during business hours. For emergencies, call <a href="tel:+17869304300" style="color: var(--primary-orange); font-weight: 700;">786-930-4300</a>.</p>
+            <!--Start of Housecallpro Lead Capture code-->
+            <script async src="https://online-booking.housecallpro.com/script.js?token=af21886fa67949b0a092483df1175317&orgName=Electrical-Services-Unlimited-Inc"></script>
+            <iframe style="border: none; width: 100%;" id="hcp-lead-iframe" src="https://book.housecallpro.com/lead-form/Electrical-Services-Unlimited-Inc/af21886fa67949b0a092483df1175317" height="650" title="Request a Free Estimate — ESU"></iframe>
+            <!--End of Housecallpro Lead Capture code-->
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-inner">
+            <button class="lightbox-close" onclick="closeLightbox()"><i class="fa-solid fa-xmark"></i></button>
+            <img id="lightbox-img" src="" alt="">
+            <p class="lightbox-caption" id="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <div id="site-footer"></div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // ── Portfolio filter ──────────────────────────────────────────
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        const emptyState = document.getElementById('empty-state');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                let visible = 0;
+                portfolioItems.forEach(item => {
+                    const show = filter === 'all' || item.dataset.category === filter;
+                    item.classList.toggle('hidden', !show);
+                    if (show) visible++;
+                });
+                emptyState.style.display = visible === 0 ? 'block' : 'none';
+            });
+        });
+
+        // ── Lightbox ─────────────────────────────────────────────────
+        function openLightbox(src, caption) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-img').alt = caption;
+            document.getElementById('lightbox-caption').textContent = caption;
+            document.getElementById('lightbox').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(e) {
+            const overlay = document.getElementById('lightbox');
+            if (!e || e.target === overlay || e.currentTarget === document.querySelector('.lightbox-close')) {
+                overlay.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                document.getElementById('lightbox').classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>
