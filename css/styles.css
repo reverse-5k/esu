@@ -190,8 +190,10 @@ header .btn { padding: 11px 22px; font-size: 0.95rem; }
 
 /* Grid Cards (Services, Values) */
 .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+.services-flex { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+.services-flex .card { flex: 0 1 320px; min-width: 260px; }
 .card { background: white; padding: 50px 30px; border-radius: 12px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: var(--transition); border-top: 5px solid transparent; }
-.card:hover { transform: translateY(-15px); border-top: 5px solid var(--primary-orange); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+.card:hover { transform: translateY(-6px); border-top: 5px solid var(--primary-orange); box-shadow: 0 16px 32px rgba(0,0,0,0.12); }
 .card i { font-size: 4rem; color: var(--primary-navy); margin-bottom: 25px; transition: var(--transition); }
 .card:hover i { color: var(--primary-orange); transform: scale(1.1); }
 .card h3 { font-size: 1.8rem; margin-bottom: 15px; }
