@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Commercial electrician in Miami & South Florida. Tenant improvements, LED retrofits, EV charging stations, panel upgrades. State certified EC13007781. Call 786-930-4300.">
+    <title>Commercial Electrical Services Miami | ESU — Electrical Services Unlimited</title>
+    <link rel="canonical" href="https://esucorp.com/commercial.html">
+
+    <meta property="og:title" content="Commercial Electrical Services Miami | ESU">
+    <meta property="og:description" content="Commercial electrician in Miami & South Florida. Tenant improvements, LED retrofits, EV charging stations, panel upgrades. State certified EC13007781.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://esucorp.com/commercial.html">
+    <meta property="og:image" content="https://esucorp.com/assets/images/team.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Electrician",
+      "name": "Electrical Services Unlimited",
+      "url": "https://esucorp.com",
+      "telephone": "+17869304300",
+      "description": "Commercial electrician serving businesses, property managers, and general contractors in Miami and South Florida.",
+      "areaServed": [
+        {"@type": "City", "name": "Miami"},
+        {"@type": "City", "name": "Hialeah"},
+        {"@type": "City", "name": "Doral"},
+        {"@type": "City", "name": "Coral Gables"}
+      ]
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .commercial-hero {
+            background: linear-gradient(rgba(2, 26, 43, 0.88), rgba(2, 26, 43, 0.88)), url('assets/images/team.png') center/cover no-repeat;
+            padding: 100px 5% 80px;
+            text-align: center;
+            color: white;
+        }
+        .commercial-hero h1 { color: white; font-size: clamp(2.2rem, 5vw, 3.6rem); margin-bottom: 22px; line-height: 1.1; font-family: 'Outfit', sans-serif; font-weight: 900; max-width: 820px; margin-left: auto; margin-right: auto; }
+        .commercial-hero p { font-size: 1.2rem; max-width: 650px; margin: 0 auto 38px; opacity: 0.88; line-height: 1.7; }
+        .commercial-hero .badge {
+            display: inline-block;
+            background: var(--primary-orange);
+            color: white;
+            padding: 5px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        /* Industries grid */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .industry-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            border-top: 4px solid var(--primary-orange);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .industry-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+        .industry-card i { font-size: 2.2rem; color: var(--primary-orange); margin-bottom: 14px; display: block; }
+        .industry-card h3 { font-size: 1.05rem; color: var(--primary-navy); margin-bottom: 8px; }
+        .industry-card p { font-size: 0.9rem; color: #666; line-height: 1.6; margin: 0; }
+
+        /* Service rows — same as services.html */
+        .svc-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 400px;
+            overflow: hidden;
+        }
+        .svc-row.reverse .svc-image { order: 2; }
+        .svc-row.reverse .svc-content { order: 1; }
+        .svc-image {
+            position: relative;
+            background-color: var(--primary-navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .svc-image img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: transform 0.5s ease, opacity 0.4s ease; }
+        .svc-row:hover .svc-image img { transform: scale(1.04); opacity: 1; }
+        .svc-image-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(4,42,66,0.55) 0%, rgba(4,42,66,0.1) 100%); }
+        .svc-image-icon { position: absolute; bottom: 20px; right: 20px; width: 64px; height: 64px; background: var(--primary-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: white; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+        .svc-icon-placeholder { font-size: 8rem; color: var(--primary-orange); opacity: 0.4; }
+        .svc-content { padding: 60px 50px; display: flex; flex-direction: column; justify-content: center; background: white; }
+        .svc-label { display: inline-block; font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--primary-orange); margin-bottom: 12px; }
+        .svc-content h2 { font-size: 2.2rem; margin-bottom: 15px; line-height: 1.15; }
+        .svc-content p { font-size: 1.1rem; color: #555; margin-bottom: 20px; line-height: 1.7; }
+        .svc-bullets { list-style: none; padding: 0; margin-bottom: 30px; }
+        .svc-bullets li { padding: 6px 0; font-size: 1rem; color: #444; display: flex; align-items: center; gap: 10px; }
+        .svc-bullets li i { color: var(--primary-orange); font-size: 0.9rem; flex-shrink: 0; }
+        .svc-row:nth-child(even) .svc-content { background: #f8f9fa; }
+        .svc-row:nth-child(even) .svc-image { background: #021a2b; }
+
+        .cta-band { background: var(--primary-orange); padding: 50px 5%; text-align: center; color: white; }
+        .cta-band h2 { color: white; font-size: 2.4rem; margin-bottom: 15px; }
+        .cta-band p { font-size: 1.15rem; opacity: 0.92; margin-bottom: 30px; }
+        .btn-white { background: white; color: var(--primary-orange); border-radius: 50px; padding: 15px 40px; font-weight: 800; font-size: 1.1rem; display: inline-block; transition: all 0.3s ease; margin: 8px; }
+        .btn-white:hover { background: var(--primary-navy); color: white; transform: translateY(-3px); }
+        .btn-white-outline { background: transparent; color: white; border: 2px solid white; border-radius: 50px; padding: 15px 40px; font-weight: 800; font-size: 1.1rem; display: inline-block; transition: all 0.3s ease; margin: 8px; }
+        .btn-white-outline:hover { background: white; color: var(--primary-orange); transform: translateY(-3px); }
+
+        @media (max-width: 900px) {
+            .svc-row, .svc-row.reverse { grid-template-columns: 1fr; }
+            .svc-row.reverse .svc-image { order: 1; }
+            .svc-row.reverse .svc-content { order: 2; }
+            .svc-image { min-height: 260px; }
+            .svc-content { padding: 40px 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-sticky-cta">
+        <a href="tel:+17869304300"><i class="fa-solid fa-phone"></i>&nbsp; Commercial Quote: 786-930-4300</a>
+    </div>
+
+    <div class="top-bar">
+        <div class="contact-info">
+            <i class="fa-solid fa-phone"></i>&nbsp;<a href="tel:+17869304300">786-930-4300</a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fa-solid fa-envelope"></i>&nbsp;<a href="mailto:info@esucorp.com">info@esucorp.com</a>
+        </div>
+        <div>
+            <i class="fa-solid fa-bolt" style="color: var(--primary-orange);"></i>
+            <strong style="color:white;"> 24/7 Emergency Service</strong>
+        </div>
+    </div>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" class="logo-img" alt="ESU — Electrical Services Unlimited">
+            </a>
+            <button class="mobile-menu-btn" aria-label="Open navigation menu"><i class="fa-solid fa-bars"></i></button>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="commercial.html" class="active">COMMERCIAL</a></li>
+                    <li><a href="projects.html">PROJECTS</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="tips.html">TIPS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+17869304300" class="btn btn-primary"><i class="fa-solid fa-phone"></i>&nbsp; 786-930-4300</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="commercial-hero">
+        <div class="reveal">
+            <div class="badge">State Certified EC13007781 — Commercial & Residential</div>
+            <h1>South Florida's Commercial Electrician.</h1>
+            <p>Offices, retail, restaurants, warehouses, and multifamily. We work directly with property managers, general contractors, and business owners throughout Miami and South Florida.</p>
+            <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+                <a href="tel:+17869304300" class="btn btn-primary"><i class="fa-solid fa-phone"></i>&nbsp; Call 786-930-4300</a>
+                <a href="contact.html" class="btn btn-outline-white">Request a Commercial Quote</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar reveal">
+        <div class="trust-item"><i class="fa-solid fa-certificate"></i> Licensed EC13007781</div>
+        <div class="trust-item"><i class="fa-solid fa-file-contract"></i> GC-Ready Documentation</div>
+        <div class="trust-item"><i class="fa-solid fa-helmet-safety"></i> OSHA Compliant</div>
+        <div class="trust-item"><i class="fa-solid fa-tag"></i> Written Commercial Quotes</div>
+    </div>
+
+    <!-- Industries We Serve -->
+    <section class="section bg-light">
+        <div class="reveal" style="max-width: 800px; margin: 0 auto 44px; text-align: center;">
+            <h2 class="section-title">Industries We Serve</h2>
+            <p style="font-size: 1.15rem; color: #555;">From a single-tenant retail suite to a full building fit-out, our commercial team has the experience and licensing to get it done on schedule.</p>
+        </div>
+        <div class="industries-grid reveal">
+            <div class="industry-card">
+                <i class="fa-solid fa-building"></i>
+                <h3>Office & Corporate</h3>
+                <p>Tenant buildouts, server room circuits, lighting upgrades, and full-floor renovations.</p>
+            </div>
+            <div class="industry-card">
+                <i class="fa-solid fa-store"></i>
+                <h3>Retail & Shopping</h3>
+                <p>New tenant wiring, display lighting, POS circuit runs, and code-compliant panel work.</p>
+            </div>
+            <div class="industry-card">
+                <i class="fa-solid fa-utensils"></i>
+                <h3>Restaurants & Food Service</h3>
+                <p>High-demand kitchen circuits, hood ventilation wiring, walk-in cooler power, and health inspection compliance.</p>
+            </div>
+            <div class="industry-card">
+                <i class="fa-solid fa-warehouse"></i>
+                <h3>Warehouses & Industrial</h3>
+                <p>High-bay LED lighting, 3-phase power, dock equipment circuits, and panel upgrades for heavy loads.</p>
+            </div>
+            <div class="industry-card">
+                <i class="fa-solid fa-house-medical"></i>
+                <h3>Medical & Healthcare</h3>
+                <p>Dedicated circuits for imaging equipment, generator integration, exam room power, and NFPA 99 compliance.</p>
+            </div>
+            <div class="industry-card">
+                <i class="fa-solid fa-building-user"></i>
+                <h3>Multifamily & Apartments</h3>
+                <p>Common area electrical, EV charging infrastructure, panel upgrades for aging buildings, and unit repairs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COMMERCIAL SERVICE ROWS ===== -->
+
+    <!-- 1. Buildouts -->
+    <div class="svc-row reveal-left">
+        <div class="svc-image" style="background: #021a2b;">
+            <div class="svc-icon-placeholder"><i class="fa-solid fa-hammer"></i></div>
+            <div class="svc-image-overlay"></div>
+            <div class="svc-image-icon"><i class="fa-solid fa-hammer"></i></div>
+        </div>
+        <div class="svc-content">
+            <span class="svc-label">Most Common Commercial Job</span>
+            <h2>Tenant Improvements & Buildouts</h2>
+            <p>New tenant moving in? Office renovation underway? We coordinate directly with your general contractor, pull the permits, run all rough-in wiring, and bring it through to final inspection. We've wired offices, restaurants, clinics, and retail spaces across South Florida.</p>
+            <ul class="svc-bullets">
+                <li><i class="fa-solid fa-check-circle"></i> Office, retail, restaurant, and medical fit-outs</li>
+                <li><i class="fa-solid fa-check-circle"></i> Full permit and inspection management</li>
+                <li><i class="fa-solid fa-check-circle"></i> GC coordination and progress documentation</li>
+                <li><i class="fa-solid fa-check-circle"></i> Rough-in, trim, and final walk-through</li>
+            </ul>
+            <a href="commercial-buildouts.html" class="btn btn-primary" style="align-self:flex-start;">View Service Details &rarr;</a>
+        </div>
+    </div>
+
+    <!-- 2. Commercial Lighting -->
+    <div class="svc-row reverse reveal-right">
+        <div class="svc-image" style="background: #021a2b;">
+            <div class="svc-icon-placeholder"><i class="fa-solid fa-lightbulb"></i></div>
+            <div class="svc-image-overlay"></div>
+            <div class="svc-image-icon"><i class="fa-solid fa-lightbulb"></i></div>
+        </div>
+        <div class="svc-content">
+            <span class="svc-label">Fastest ROI in Commercial Electrical</span>
+            <h2>Commercial LED Lighting & Energy Upgrades</h2>
+            <p>Replacing old fluorescent tubes and inefficient fixtures with modern LED is typically the fastest-payback electrical upgrade a business can make. We handle offices, warehouses, retail floors, and parking lots. Most projects pay for themselves within 18 months through energy savings alone.</p>
+            <ul class="svc-bullets">
+                <li><i class="fa-solid fa-check-circle"></i> Office, warehouse, and retail LED retrofits</li>
+                <li><i class="fa-solid fa-check-circle"></i> Parking lot and exterior lighting</li>
+                <li><i class="fa-solid fa-check-circle"></i> Emergency and exit lighting systems</li>
+                <li><i class="fa-solid fa-check-circle"></i> Energy audit and rebate documentation</li>
+            </ul>
+            <a href="commercial-lighting.html" class="btn btn-primary" style="align-self:flex-start;">View Service Details &rarr;</a>
+        </div>
+    </div>
+
+    <!-- Mid CTA -->
+    <div class="cta-band reveal">
+        <h2><i class="fa-solid fa-phone"></i>&nbsp; Ready to Get a Commercial Quote?</h2>
+        <p>We provide written estimates for all commercial work. Call us or fill out the contact form and we'll get back to you within the hour.</p>
+        <a href="tel:+17869304300" class="btn-white">Call 786-930-4300</a>
+        <a href="contact.html" class="btn-white-outline">Request a Written Quote</a>
+    </div>
+
+    <!-- 3. Commercial EV Charging -->
+    <div class="svc-row reveal-left">
+        <div class="svc-image" style="background: #021a2b;">
+            <div class="svc-icon-placeholder"><i class="fa-solid fa-charging-station"></i></div>
+            <div class="svc-image-overlay"></div>
+            <div class="svc-image-icon"><i class="fa-solid fa-charging-station"></i></div>
+        </div>
+        <div class="svc-content">
+            <span class="svc-label">Fast-Growing Business Amenity</span>
+            <h2>Commercial EV Charging Stations</h2>
+            <p>Multi-unit Level 2 and DC fast chargers for parking lots, apartment communities, hotels, and office buildings. We size the electrical service, install the infrastructure, and coordinate with the utility so your stations go live on schedule — with full permit documentation for any available tax credits.</p>
+            <ul class="svc-bullets">
+                <li><i class="fa-solid fa-check-circle"></i> Level 2 multi-port stations (4, 8, 16+ ports)</li>
+                <li><i class="fa-solid fa-check-circle"></i> DC fast charger installation</li>
+                <li><i class="fa-solid fa-check-circle"></i> Parking lot conduit and panel work</li>
+                <li><i class="fa-solid fa-check-circle"></i> Load management system wiring</li>
+            </ul>
+            <a href="commercial-ev-charging.html" class="btn btn-primary" style="align-self:flex-start;">View Service Details &rarr;</a>
+        </div>
+    </div>
+
+    <!-- 4. Commercial Repairs & Maintenance -->
+    <div class="svc-row reverse reveal-right">
+        <div class="svc-image">
+            <img src="assets/images/electrician.png" alt="Commercial electrician performing repairs in Miami">
+            <div class="svc-image-overlay"></div>
+            <div class="svc-image-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        </div>
+        <div class="svc-content">
+            <span class="svc-label">24/7 Available</span>
+            <h2>Commercial Electrical Repairs</h2>
+            <p>A tripped breaker or a dead circuit in a commercial space isn't an inconvenience — it's lost revenue. We respond fast to commercial repair calls, diagnose the root cause, and restore power with minimal disruption to your operation. Emergency after-hours response available.</p>
+            <ul class="svc-bullets">
+                <li><i class="fa-solid fa-check-circle"></i> Panel and circuit troubleshooting</li>
+                <li><i class="fa-solid fa-check-circle"></i> Outlet, switch, and fixture replacement</li>
+                <li><i class="fa-solid fa-check-circle"></i> Code violation corrections</li>
+                <li><i class="fa-solid fa-check-circle"></i> 24/7 emergency response</li>
+            </ul>
+            <a href="electrical-repairs.html" class="btn btn-primary" style="align-self:flex-start;">View Service Details &rarr;</a>
+        </div>
+    </div>
+
+    <!-- Why ESU for Commercial -->
+    <section class="section" style="background: var(--primary-navy); color: white;">
+        <div class="reveal" style="max-width: 800px; margin: 0 auto 44px; text-align: center;">
+            <h2 style="color: white; font-size: 2.5rem; margin-bottom: 16px;">Why Contractors and Property Managers Choose ESU</h2>
+            <p style="font-size: 1.15rem; opacity: 0.88;">We're not a residential company that occasionally takes commercial work. We've been doing both since day one and we know what commercial clients actually need.</p>
+        </div>
+        <div class="grid-3 reveal" style="max-width: 1000px; margin: 0 auto;">
+            <div class="prop-card">
+                <i class="fa-solid fa-file-contract"></i>
+                <h4>GC-Ready from Day One</h4>
+                <p>We provide all the documentation general contractors need: COI, W-9, license verification, and written scopes of work.</p>
+            </div>
+            <div class="prop-card">
+                <i class="fa-solid fa-calendar-check"></i>
+                <h4>We Keep the Schedule</h4>
+                <p>Commercial jobs have move-in deadlines. We coordinate around your timeline and communicate proactively if anything changes.</p>
+            </div>
+            <div class="prop-card">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <h4>Transparent Commercial Billing</h4>
+                <p>Written estimates before work begins. No change orders without prior approval. Invoices formatted for accounts payable.</p>
+            </div>
+            <div class="prop-card">
+                <i class="fa-solid fa-helmet-safety"></i>
+                <h4>OSHA Compliant</h4>
+                <p>All field techs are OSHA 10 certified. We follow jobsite safety protocols required by commercial property managers and GCs.</p>
+            </div>
+            <div class="prop-card">
+                <i class="fa-solid fa-stamp"></i>
+                <h4>We Pull All Permits</h4>
+                <p>We handle all permit applications, inspections, and final sign-offs with Miami-Dade and Broward County building departments.</p>
+            </div>
+            <div class="prop-card">
+                <i class="fa-solid fa-phone"></i>
+                <h4>One Point of Contact</h4>
+                <p>You get a direct line to the person managing your job, not a dispatcher. Questions get answered same day.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section" style="text-align: center;">
+        <div class="reveal">
+            <h2 style="font-size: 2.8rem; margin-bottom: 16px;">Ready to Talk About Your Project?</h2>
+            <p style="font-size: 1.2rem; color: #555; max-width: 600px; margin: 0 auto 40px;">We respond to commercial inquiry calls the same day. If you have drawings or a scope ready, we can usually get you a written estimate within 24–48 hours.</p>
+            <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+                <a href="tel:+17869304300" class="btn btn-primary" style="font-size: 1.3rem; padding: 18px 44px;"><i class="fa-solid fa-phone"></i>&nbsp; Call 786-930-4300</a>
+                <a href="contact.html" class="btn btn-secondary" style="font-size: 1.3rem; padding: 18px 44px;">Send Us a Message</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <script src="js/main.js"></script>
+</body>
+</html>

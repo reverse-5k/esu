@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
             <div class="footer-col">
-                <h4>All Services</h4>
+                <h4>Residential Services</h4>
                 <ul>
                     <li><a href="electrical-repairs.html">Electrical Repairs</a></li>
                     <li><a href="panel-upgrades.html">Panel Upgrades</a></li>
@@ -27,6 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li><a href="electrical-wiring.html">Electrical Wiring</a></li>
                     <li><a href="surge-protection.html">Surge Protection</a></li>
                     <li><a href="ev-charger-installation.html">EV Charger Installation</a></li>
+                    <li><a href="electrical-inspection.html">Electrical Inspection</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Commercial Services</h4>
+                <ul>
+                    <li><a href="commercial.html">Commercial Overview</a></li>
+                    <li><a href="commercial-buildouts.html">Tenant Improvements</a></li>
+                    <li><a href="commercial-lighting.html">Commercial LED Lighting</a></li>
+                    <li><a href="commercial-ev-charging.html">Business EV Charging</a></li>
                 </ul>
             </div>
             <div class="footer-col">
