@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Residential electrical services in Miami and South Florida: repairs, panel upgrades, generator installation, lighting, wiring, surge protection, and more. Call 786-930-4300.">
+    <title>Residential Electrical Services Miami | ESU — Electrical Services Unlimited</title>
+    <link rel="canonical" href="https://esucorp.com/residential.html">
+
+    <meta property="og:title" content="Residential Electrical Services Miami | ESU">
+    <meta property="og:description" content="Residential electrical services in Miami and South Florida: repairs, panel upgrades, generator installation, lighting, wiring, surge protection, and more. Call 786-930-4300.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://esucorp.com/residential.html">
+    <meta property="og:image" content="https://esucorp.com/assets/images/team.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* ---- Services Index Specific ---- */
+        .services-hero {
+            background: var(--primary-navy);
+            padding: 100px 5% 80px;
+            text-align: center;
+            color: white;
+        }
+        .services-hero h1 { color: white; font-size: 3.5rem; margin-bottom: 20px; }
+        .services-hero p  { font-size: 1.2rem; opacity: 0.85; max-width: 650px; margin: 0 auto 35px; }
+
+        /* Alternating service rows */
+        .svc-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 400px;
+            overflow: hidden;
+        }
+        .svc-row.reverse .svc-image { order: 2; }
+        .svc-row.reverse .svc-content { order: 1; }
+
+        .svc-image {
+            position: relative;
+            background-color: var(--primary-navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .svc-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+            transition: transform 0.5s ease, opacity 0.4s ease;
+        }
+        .svc-row:hover .svc-image img { transform: scale(1.04); opacity: 1; }
+        .svc-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(4,42,66,0.55) 0%, rgba(4,42,66,0.1) 100%);
+        }
+        .svc-image-icon {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 64px;
+            height: 64px;
+            background: var(--primary-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        .svc-icon-placeholder {
+            font-size: 8rem;
+            color: var(--primary-orange);
+            opacity: 0.4;
+        }
+
+        .svc-content {
+            padding: 60px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: white;
+        }
+        .svc-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--primary-orange);
+            margin-bottom: 12px;
+        }
+        .svc-content h2 { font-size: 2.2rem; margin-bottom: 15px; line-height: 1.15; }
+        .svc-content p  { font-size: 1.1rem; color: #555; margin-bottom: 20px; line-height: 1.7; }
+        .svc-bullets { list-style: none; padding: 0; margin-bottom: 30px; }
+        .svc-bullets li {
+            padding: 6px 0;
+            font-size: 1rem;
+            color: #444;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .svc-bullets li i { color: var(--primary-orange); font-size: 0.9rem; flex-shrink: 0; }
+
+        /* Alternating bg for rows */
+        .svc-row:nth-child(even) .svc-content { background: #f8f9fa; }
+        .svc-row:nth-child(even) .svc-image { background: #021a2b; }
+
+        /* Mid-page CTA band */
+        .cta-band {
+            background: var(--primary-orange);
+            padding: 50px 5%;
+            text-align: center;
+            color: white;
+        }
+        .cta-band h2 { color: white; font-size: 2.4rem; margin-bottom: 15px; }
+        .cta-band p  { font-size: 1.15rem; opacity: 0.92; margin-bottom: 30px; }
+        .btn-white {
+            background: white;
+            color: var(--primary-orange);
+            border-radius: 50px;
+            padding: 15px 40px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 8px;
+        }
+        .btn-white:hover { background: var(--primary-navy); color: white; transform: translateY(-3px); }
+        .btn-white-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            border-radius: 50px;
+            padding: 15px 40px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 8px;
+        }
+        .btn-white-outline:hover { background: white; color: var(--primary-orange); transform: translateY(-3px); }
+
+        @media (max-width: 900px) {
+            .svc-row, .svc-row.reverse { grid-template-columns: 1fr; }
+            .svc-row.reverse .svc-image { order: 1; }
+            .svc-row.reverse .svc-content { order: 2; }
+            .svc-image { min-height: 260px; }
+            .svc-content { padding: 40px 25px; }
+            .services-hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-sticky-cta">
+        <a href="tel:+17869304300"><i class="fa-solid fa-phone"></i>&nbsp; Emergency? Call 786-930-4300</a>
+    </div>
+
+    <div class="top-bar">
+        <div class="contact-info">
+            <i class="fa-solid fa-phone"></i>&nbsp;<a href="tel:+17869304300">786-930-4300</a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fa-solid fa-envelope"></i>&nbsp;<a href="mailto:info@esucorp.com">info@esucorp.com</a>
+        </div>
+        <div>
+            <i class="fa-solid fa-bolt" style="color: var(--primary-orange);"></i>
+            <strong style="color:white;"> 24/7 Emergency Service</strong>
+        </div>
+    </div>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" class="logo-img" alt="ESU — Electrical Services Unlimited">
+            </a>
+            <button class="mobile-menu-btn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="residential.html" class="active">RESIDENTIAL</a></li>
+                    <li><a href="commercial.html">COMMERCIAL</a></li>
+                    <li><a href="projects.html">PROJECTS</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="tips.html">TIPS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+17869304300" class="btn btn-primary"><i class="fa-solid fa-phone"></i>&nbsp; 786-930-4300</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="services-hero">
+        <div class="reveal">
+            <div class="badge-pill">Residential Services — Miami & South Florida</div>
+            <h1>Every Residential Electrical Service<br>Under One Roof.</h1>
+            <p>From a tripping breaker to a full-home generator installation, ESU handles it all — prompt service, up-front pricing, no hidden fees.</p>
+            <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+                <a href="tel:+17869304300" class="btn btn-primary"><i class="fa-solid fa-phone"></i>&nbsp; Call 786-930-4300</a>
+                <a href="contact.html" class="btn btn-outline-white">Get a Free Estimate</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar reveal">
+        <div class="trust-item"><i class="fa-solid fa-certificate"></i> Licensed EC13007781</div>
+        <div class="trust-item"><i class="fa-solid fa-clock"></i> We'll Make It Right</div>
+        <div class="trust-item"><i class="fa-solid fa-tag"></i> Up-Front Pricing</div>
+        <div class="trust-item"><i class="fa-solid fa-truck-fast"></i> Same-Day Available</div>
+    </div>
+
+    <!-- ===== SERVICE ROWS ===== -->
+
+    <!-- 1. Electrical Repairs -->
+    <div class="svc-row reveal-left">
+        <div class="svc-image">
+            <img src="assets/images/electrician.png" alt="Electrician performing emergency electrical repair">
+            <div class="svc-image-overlay"></div>
+            <div class="svc-image-icon"><i class="fa-solid fa-plug"></i></div>
+        </div>
+        <div class="svc-content">
+            <span class="svc-label">Most Requested</span>
+            <h2>Electrical Repairs</h2>
+            <p>Electrical problems don't just cause inconvenience — they're a leading cause of house fires. Our expert technicians arrive fast, diagnose the root cause, and fix it right the first time with a full workmanship guarantee.</p>
+            <ul class="svc-bullets">
+                <li><i class="fa-solid fa-check-circle"></i> Dead outlets & broken switches</li>
+                <li><i class="fa-solid fa-check-circle"></i> Flickering lights & buzzing fixtures</li>
+                <li><i class="fa-solid fa-check-circle"></i> Constantly tripping breakers</li>
+                <li><i class="fa-solid fa-check-circle"></i> Partial power loss & wiring faults</li>
+            </ul>
+            <a href="electrical-repairs.html" class="btn btn-primary" style="align-self:flex-start;">View Service Details &rarr;</a>
+        </div>
+    </div>
+
+    <!-- 2. Panel Upgrades -->
+    <div class="svc-row reverse reveal-right">
+        <div class="svc-image">
+            <img src="assets/images/electrical_panel.png" alt="Modern electrical panel installed by ESU">
+            <div class="svc-image-overlay"></div>
+            <div class="svc-image-icon"><i class="fa-solid fa-charging-station"></i></div>
+        </div>
+        <div class="svc-content">
+            <span class="svc-label">Safety Critical</span>
+            <h2>Electrical Panel Upgrades</h2>
+            <p>An outdated or undersized panel is one of the biggest fire risks in any home. If you have an FPE, Zinsco, or older 100-amp panel, it likely cannot safely power your home's current demands and should be replaced immediately.</p>
+            <ul class="svc-bullets">
+                <li><i class="fa-solid fa-check-circle"></i> 100A → 200A upgrades</li>
+                <li><i class="fa-solid fa-check-circle"></i> FPE & Zinsco panel replacements</li>
+                <li><i class="fa-solid fa-check-circle"></i> EV charger circuit additions</li>
+                <li><i class="fa-solid fa-check-circle"></i> Full permit & inspection handling</li>
+            </ul>
+            <a href="panel-upgrades.html" class="btn btn-primary" style="align-self:flex-start;">View Service Details &rarr;</a>
+        </div>
+    </div>
+
+    <!-- Mid-page CTA band -->
+    <div class="cta-band reveal">
+        <h2><i class="fa-solid fa-phone"></i>&nbsp; Have an Emergency? Don't Wait.</h2>
+        <p>We have technicians on call 24/7. Call us now and we'll dispatch to your location immediately.</p>
+        <a href="tel:+17869304300" class="btn-white">Call 786-930-4300</a>
+        <a href="contact.html" class="btn-white-outline">Schedule Online</a>
+    </div>
+
+    <!-- 3. Lighting -->
+    <div class="svc-row reveal-left">
+        <div class="svc-image" style="background: #021a2b;">
+            <!-- Replace with actual recessed lighting photo -->
+            <div class="svc-icon-placeholder"><i class="fa-regular fa-lightbulb"></i></div>
+            <div class="svc-image-overlay"></div>
+            <div class="svc-image-icon"><i class="fa-solid fa-lightbulb"></i></div>
+        </div>
+        <div class="svc-content">
+            <span class="svc-label">Lighting & Fixtures</span>
+            <h2>Lighting Installation & Design</h2>
+            <p>The right lighting completely changes how a space looks and feels. We design and install everything from sleek interior recessed lights to full outdoor landscape and security lighting systems that make your property look stunning day and night.</p>
+            <ul class="svc-bullets">
+                <li><i class="fa-solid fa-check-circle"></i> Recessed (can) lighting installation</li>
+                <li><i class="fa-solid fa-check-circle"></i> Outdoor landscape & pathway lighting</li>
+                <li><i class="fa-solid fa-check-circle"></i> Motion-sensor security floodlights</li>
+                <li><i class="fa-solid fa-check-circle"></i> Energy-efficient LED upgrades</li>
+            </ul>
+            <a href="lighting.html" class="btn btn-primary" style="align-self:flex-start;">View Service Details &rarr;</a>
+        </div>
+    </div>
+
+    <!-- 4. Generator Installation -->
+    <div class="svc-row reverse reveal-right">
+        <div class="svc-image" style="background: #021a2b;">
+            <!-- Replace with actual generator photo -->
+            <div class="svc-icon-placeholder"><i class="fa-solid fa-car-battery"></i></div>
+            <div class="svc-image-overlay"></div>
+            <div class="svc-image-icon"><i class="fa-solid fa-car-battery"></i></div>
+        </div>
+        <div class="svc-content">
+            <span class="svc-label">Hurricane Season Essential</span>
+            <h2>Standby Generator Installation</h2>
+            <p>South Florida's storms are unpredictable and the power grid is fragile. A permanent Generac or Kohler standby generator automatically powers your entire home within seconds of an outage — no extension cords, no trips outside in the rain, no refueling.</p>
+            <ul class="svc-bullets">
+                <li><i class="fa-solid fa-check-circle"></i> Automatic turn-on in under 10 seconds</li>
+                <li><i class="fa-solid fa-check-circle"></i> Natural gas or propane powered</li>
+                <li><i class="fa-solid fa-check-circle"></i> Full whole-home coverage available</li>
+                <li><i class="fa-solid fa-check-circle"></i> Turnkey permitting & gas coordination</li>
+            </ul>
+            <a href="generator-installation.html" class="btn btn-primary" style="align-self:flex-start;">View Service Details &rarr;</a>
+        </div>
+    </div>
+
+    <!-- 5. Electrical Wiring -->
+    <div class="svc-row reveal-left">
+        <div class="svc-image" style="background: #021a2b;">
+            <div class="svc-icon-placeholder"><i class="fa-solid fa-network-wired"></i></div>
+            <div class="svc-image-overlay"></div>
+            <div class="svc-image-icon"><i class="fa-solid fa-network-wired"></i></div>
+        </div>
+        <div class="svc-content">
+            <span class="svc-label">New Construction & Remodels</span>
+            <h2>Electrical Wiring & Rewiring</h2>
+            <p>Hidden behind your walls is the nervous system of your home. Whether you're adding a new room, remodeling a kitchen, or replacing dangerous old aluminum wiring, our master electricians run every wire to code with a lifetime workmanship guarantee.</p>
+            <ul class="svc-bullets">
+                <li><i class="fa-solid fa-check-circle"></i> Whole-home rewiring for older properties</li>
+                <li><i class="fa-solid fa-check-circle"></i> New construction & remodel wiring</li>
+                <li><i class="fa-solid fa-check-circle"></i> Dedicated circuits for AC, hot tubs & EVs</li>
+                <li><i class="fa-solid fa-check-circle"></i> Code violation corrections</li>
+            </ul>
+            <a href="electrical-wiring.html" class="btn btn-primary" style="align-self:flex-start;">View Service Details &rarr;</a>
+        </div>
+    </div>
+
+    <!-- 6. Surge Protection -->
+    <div class="svc-row reverse reveal-right">
+        <div class="svc-image" style="background: #021a2b;">
+            <div class="svc-icon-placeholder"><i class="fa-solid fa-shield"></i></div>
+            <div class="svc-image-overlay"></div>
+            <div class="svc-image-icon"><i class="fa-solid fa-shield"></i></div>
+        </div>
+        <div class="svc-content">
+            <span class="svc-label">Florida's #1 Risk</span>
+            <h2>Whole-Home Surge Protection</h2>
+            <p>Florida sees more lightning strikes per year than any other state. One strike near your home can send a massive voltage spike through your wiring in milliseconds, silently destroying your HVAC system, refrigerator, smart TVs, and computers before you even hear the thunder.</p>
+            <ul class="svc-bullets">
+                <li><i class="fa-solid fa-check-circle"></i> Panel-level protection (not just power strips)</li>
+                <li><i class="fa-solid fa-check-circle"></i> Protects hardwired appliances (HVAC, ovens)</li>
+                <li><i class="fa-solid fa-check-circle"></i> Blocks lightning & grid fluctuations</li>
+                <li><i class="fa-solid fa-check-circle"></i> Quick 2-hour installation</li>
+            </ul>
+            <a href="surge-protection.html" class="btn btn-primary" style="align-self:flex-start;">View Service Details &rarr;</a>
+        </div>
+    </div>
+
+    <!-- 7. EV Charger Installation -->
+    <div class="svc-row reveal-left">
+        <div class="svc-image" style="background: #021a2b;">
+            <div class="svc-icon-placeholder"><i class="fa-solid fa-charging-station"></i></div>
+            <div class="svc-image-overlay"></div>
+            <div class="svc-image-icon"><i class="fa-solid fa-charging-station"></i></div>
+        </div>
+        <div class="svc-content">
+            <span class="svc-label">EV Owners</span>
+            <h2>EV Charger Installation</h2>
+            <p>A standard 120V outlet adds 3–5 miles of range per hour. A dedicated Level 2 (240V) circuit adds 25–30. We size the circuit correctly, check your panel capacity, pull the city permit, and have you charging at home the same week.</p>
+            <ul class="svc-bullets">
+                <li><i class="fa-solid fa-check-circle"></i> Level 2 (240V) dedicated circuit installation</li>
+                <li><i class="fa-solid fa-check-circle"></i> Compatible with Tesla, Ford, Chevy, Rivian & all EVs</li>
+                <li><i class="fa-solid fa-check-circle"></i> Panel load calculation included at no extra cost</li>
+                <li><i class="fa-solid fa-check-circle"></i> Permit & city inspection handled by us</li>
+            </ul>
+            <a href="ev-charger-installation.html" class="btn btn-primary" style="align-self:flex-start;">View Service Details &rarr;</a>
+        </div>
+    </div>
+
+    <!-- 8. Electrical Safety Inspection -->
+    <div class="svc-row reverse reveal-right">
+        <div class="svc-image" style="background: #021a2b;">
+            <div class="svc-icon-placeholder"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <div class="svc-image-overlay"></div>
+            <div class="svc-image-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        </div>
+        <div class="svc-content">
+            <span class="svc-label">Peace of Mind</span>
+            <h2>Electrical Safety Inspection</h2>
+            <p>We inspect your entire electrical system and give you a straight written report of what we find. Buying or selling a home, dealing with a home over 25 years old, or just not sure what's inside your walls — this is where you start.</p>
+            <ul class="svc-bullets">
+                <li><i class="fa-solid fa-check-circle"></i> Panel brand, age, and condition assessed</li>
+                <li><i class="fa-solid fa-check-circle"></i> Wiring type, GFCI, and grounding checked</li>
+                <li><i class="fa-solid fa-check-circle"></i> Written report of every finding</li>
+                <li><i class="fa-solid fa-check-circle"></i> No pressure — you decide what to do next</li>
+            </ul>
+            <a href="electrical-inspection.html" class="btn btn-primary" style="align-self:flex-start;">View Service Details &rarr;</a>
+        </div>
+    </div>
+
+    <!-- Commercial CTA Band -->
+    <div class="cta-band reveal" style="background: var(--primary-orange);">
+        <h2><i class="fa-solid fa-building"></i>&nbsp; Running a Business or Managing a Property?</h2>
+        <p>We also handle commercial electrical for offices, retail, restaurants, warehouses, and multifamily buildings across South Florida.</p>
+        <a href="commercial.html" class="btn-white">See Commercial Services</a>
+        <a href="tel:+17869304300" class="btn-white-outline">Call 786-930-4300</a>
+    </div>
+
+    <!-- Final CTA -->
+    <section class="section" style="background: var(--primary-navy); text-align: center; color: white;">
+        <div class="reveal">
+            <h2 style="color:white; font-size:3rem; margin-bottom:15px;">Not Sure What Service You Need?</h2>
+            <p style="font-size:1.2rem; opacity:0.9; margin-bottom:40px; max-width:650px; margin-left:auto; margin-right:auto; margin-bottom: 40px;">Call us and describe what you're experiencing. Our dispatchers will diagnose the issue over the phone and send the right technician the same day.</p>
+            <a href="tel:+17869304300" class="btn btn-primary" style="font-size:1.4rem; padding:20px 50px; box-shadow: 0 10px 30px rgba(241,144,28,0.5);">
+                <i class="fa-solid fa-phone"></i>&nbsp; CALL 786-930-4300
+            </a>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
