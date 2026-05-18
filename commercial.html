@@ -12,21 +12,75 @@
     <meta property="og:description" content="Commercial electrician in Miami & South Florida. Tenant improvements, LED retrofits, EV charging stations, panel upgrades. State certified EC13007781.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://esucorp.com/commercial.html">
-    <meta property="og:image" content="https://esucorp.com/assets/images/team.png">
+    <meta property="og:image" content="https://esucorp.com/assets/images/commercial-hero.jpg">
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Electrician",
-      "name": "Electrical Services Unlimited",
-      "url": "https://esucorp.com",
-      "telephone": "+17869304300",
-      "description": "Commercial electrician serving businesses, property managers, and general contractors in Miami and South Florida.",
-      "areaServed": [
-        {"@type": "City", "name": "Miami"},
-        {"@type": "City", "name": "Hialeah"},
-        {"@type": "City", "name": "Doral"},
-        {"@type": "City", "name": "Coral Gables"}
+      "@graph": [
+        {
+          "@type": "Electrician",
+          "name": "Electrical Services Unlimited",
+          "url": "https://esucorp.com",
+          "telephone": "+17869304300",
+          "description": "State-certified commercial electrician (EC13007781) serving businesses, property managers, and general contractors in Miami-Dade and Broward County.",
+          "areaServed": [
+            {"@type": "City", "name": "Miami"},
+            {"@type": "City", "name": "Hialeah"},
+            {"@type": "City", "name": "Doral"},
+            {"@type": "City", "name": "Coral Gables"},
+            {"@type": "City", "name": "Miami Beach"},
+            {"@type": "City", "name": "Fort Lauderdale"}
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Commercial Electrical Services",
+            "itemListElement": [
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Commercial Tenant Improvements & Buildouts"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Commercial LED Lighting & Energy Upgrades"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Commercial EV Charging Station Installation"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Commercial Standby Generator Installation"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Commercial Electrical Repairs"}}
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Do you work directly with general contractors?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We provide all documentation GCs require: certificate of insurance, W-9, license verification, written scopes of work, and progress documentation. We're experienced coordinating on active jobsites in Miami-Dade and Broward."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What commercial electrical services does ESU provide?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ESU handles tenant improvements and buildouts, commercial LED lighting retrofits, EV charging station installation, commercial electrical repairs, panel upgrades, and new construction rough-in for offices, restaurants, retail, warehouses, and medical facilities across Miami and South Florida."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you pull permits for commercial work in Miami-Dade and Broward County?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We handle all permit applications, inspections, and final sign-offs with both Miami-Dade County and Broward County building departments. All commercial work is performed under our state electrical contractor license EC13007781."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How quickly can you provide a commercial estimate?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For most commercial projects, we can provide a written estimate within 24–48 hours of receiving drawings or a project scope. We respond to commercial inquiry calls same day."
+              }
+            }
+          ]
+        }
       ]
     }
     </script>
@@ -36,7 +90,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <style>
         .commercial-hero {
-            background: linear-gradient(rgba(2, 26, 43, 0.88), rgba(2, 26, 43, 0.88)), url('assets/images/team.png') center/cover no-repeat;
+            background: linear-gradient(rgba(2, 26, 43, 0.88), rgba(2, 26, 43, 0.88)), url('assets/images/commercial-hero.jpg') center/cover no-repeat;
             padding: 100px 5% 80px;
             text-align: center;
             color: white;
@@ -59,11 +113,53 @@
         /* Industries grid */
         .industries-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             max-width: 1100px;
             margin: 0 auto;
         }
+        @media (max-width: 960px) { .industries-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .industries-grid { grid-template-columns: 1fr; } }
+
+        /* Lock Why ESU grid to 3 cols */
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        @media (max-width: 960px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .grid-3 { grid-template-columns: 1fr; } }
+
+        /* Stat strip */
+        .stat-strip {
+            background: var(--primary-navy);
+            border-top: 4px solid var(--primary-orange);
+            padding: 36px 5%;
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 16px 40px;
+            border-right: 1px solid rgba(255,255,255,0.12);
+        }
+        .stat-item:last-child { border-right: none; }
+        .stat-num {
+            display: block;
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: var(--primary-orange);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .stat-label {
+            display: block;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.75);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        @media (max-width: 700px) { .stat-item { border-right: none; padding: 14px 20px; } }
         .industry-card {
             background: white;
             border-radius: 8px;
@@ -82,7 +178,7 @@
         .svc-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            min-height: 400px;
+            min-height: 480px;
             overflow: hidden;
         }
         .svc-row.reverse .svc-image { order: 2; }
@@ -98,9 +194,7 @@
         .svc-image img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: transform 0.5s ease, opacity 0.4s ease; }
         .svc-row:hover .svc-image img { transform: scale(1.04); opacity: 1; }
         .svc-image-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(4,42,66,0.55) 0%, rgba(4,42,66,0.1) 100%); }
-        .svc-image-icon { position: absolute; bottom: 20px; right: 20px; width: 64px; height: 64px; background: var(--primary-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: white; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
-        .svc-icon-placeholder { font-size: 8rem; color: var(--primary-orange); opacity: 0.4; }
-        .svc-content { padding: 60px 50px; display: flex; flex-direction: column; justify-content: center; background: white; }
+        .svc-content { padding: 60px 70px; display: flex; flex-direction: column; justify-content: center; background: white; }
         .svc-label { display: inline-block; font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--primary-orange); margin-bottom: 12px; }
         .svc-content h2 { font-size: 2.2rem; margin-bottom: 15px; line-height: 1.15; }
         .svc-content p { font-size: 1.1rem; color: #555; margin-bottom: 20px; line-height: 1.7; }
@@ -156,7 +250,6 @@
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="residential.html">RESIDENTIAL</a></li>
                     <li><a href="commercial.html" class="active">COMMERCIAL</a></li>
-                    <li><a href="projects.html">PROJECTS</a></li>
                     <li><a href="about.html">ABOUT</a></li>
                     <li><a href="tips.html">TIPS</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
@@ -185,6 +278,26 @@
         <div class="trust-item"><i class="fa-solid fa-file-contract"></i> GC-Ready Documentation</div>
         <div class="trust-item"><i class="fa-solid fa-helmet-safety"></i> OSHA Compliant</div>
         <div class="trust-item"><i class="fa-solid fa-tag"></i> Written Commercial Quotes</div>
+    </div>
+
+    <!-- Stat Strip -->
+    <div class="stat-strip reveal">
+        <div class="stat-item">
+            <span class="stat-num">10+</span>
+            <span class="stat-label">Years Commercial Work</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">48 hrs</span>
+            <span class="stat-label">Written Quote Turnaround</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">2</span>
+            <span class="stat-label">Counties Served</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Permit Pass Rate</span>
+        </div>
     </div>
 
     <!-- Industries We Serve -->
@@ -232,9 +345,7 @@
     <!-- 1. Buildouts -->
     <div class="svc-row reveal-left">
         <div class="svc-image" style="background: #021a2b;">
-            <div class="svc-icon-placeholder"><i class="fa-solid fa-hammer"></i></div>
             <div class="svc-image-overlay"></div>
-            <div class="svc-image-icon"><i class="fa-solid fa-hammer"></i></div>
         </div>
         <div class="svc-content">
             <span class="svc-label">Most Common Commercial Job</span>
@@ -253,9 +364,7 @@
     <!-- 2. Commercial Lighting -->
     <div class="svc-row reverse reveal-right">
         <div class="svc-image" style="background: #021a2b;">
-            <div class="svc-icon-placeholder"><i class="fa-solid fa-lightbulb"></i></div>
             <div class="svc-image-overlay"></div>
-            <div class="svc-image-icon"><i class="fa-solid fa-lightbulb"></i></div>
         </div>
         <div class="svc-content">
             <span class="svc-label">Fastest ROI in Commercial Electrical</span>
@@ -265,7 +374,7 @@
                 <li><i class="fa-solid fa-check-circle"></i> Office, warehouse, and retail LED retrofits</li>
                 <li><i class="fa-solid fa-check-circle"></i> Parking lot and exterior lighting</li>
                 <li><i class="fa-solid fa-check-circle"></i> Emergency and exit lighting systems</li>
-                <li><i class="fa-solid fa-check-circle"></i> Energy audit and rebate documentation</li>
+                <li><i class="fa-solid fa-check-circle"></i> Written savings estimate included</li>
             </ul>
             <a href="commercial-lighting.html" class="btn btn-primary" style="align-self:flex-start;">View Service Details &rarr;</a>
         </div>
@@ -282,9 +391,7 @@
     <!-- 3. Commercial EV Charging -->
     <div class="svc-row reveal-left">
         <div class="svc-image" style="background: #021a2b;">
-            <div class="svc-icon-placeholder"><i class="fa-solid fa-charging-station"></i></div>
             <div class="svc-image-overlay"></div>
-            <div class="svc-image-icon"><i class="fa-solid fa-charging-station"></i></div>
         </div>
         <div class="svc-content">
             <span class="svc-label">Fast-Growing Business Amenity</span>
@@ -300,12 +407,30 @@
         </div>
     </div>
 
-    <!-- 4. Commercial Repairs & Maintenance -->
+    <!-- 4. Commercial Generators -->
     <div class="svc-row reverse reveal-right">
-        <div class="svc-image">
-            <img src="assets/images/electrician.png" alt="Commercial electrician performing repairs in Miami">
+        <div class="svc-image" style="background: #021a2b;">
             <div class="svc-image-overlay"></div>
-            <div class="svc-image-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        </div>
+        <div class="svc-content">
+            <span class="svc-label">Critical for South Florida Businesses</span>
+            <h2>Commercial Standby Generators</h2>
+            <p>When a storm takes the grid down, the businesses still operating are the ones that installed generators before June. We handle commercial standby installation from load analysis through final commissioning — including automatic transfer switches so your operation keeps running with no manual intervention.</p>
+            <ul class="svc-bullets">
+                <li><i class="fa-solid fa-check-circle"></i> 20–500 kW commercial generator sizing</li>
+                <li><i class="fa-solid fa-check-circle"></i> Automatic transfer switch installation</li>
+                <li><i class="fa-solid fa-check-circle"></i> Natural gas and propane fuel systems</li>
+                <li><i class="fa-solid fa-check-circle"></i> Full permit management in Miami-Dade & Broward</li>
+            </ul>
+            <a href="commercial-generators.html" class="btn btn-primary" style="align-self:flex-start;">View Service Details &rarr;</a>
+        </div>
+    </div>
+
+    <!-- 5. Commercial Repairs & Maintenance -->
+    <div class="svc-row reveal-left">
+        <div class="svc-image">
+            <!-- IMAGE PLACEHOLDER: Electrician troubleshooting or repairing in a commercial space — left image panel of the Commercial Repairs service row (commercial.html) -->
+            <div class="svc-image-overlay"></div>
         </div>
         <div class="svc-content">
             <span class="svc-label">24/7 Available</span>
@@ -357,6 +482,30 @@
                 <i class="fa-solid fa-phone"></i>
                 <h4>One Point of Contact</h4>
                 <p>You get a direct line to the person managing your job, not a dispatcher. Questions get answered same day.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section bg-light">
+        <div class="reveal" style="max-width: 800px; margin: 0 auto;">
+            <h2 class="section-title" style="text-align:center; margin-bottom: 10px;">Commercial Electrical — Common Questions</h2>
+            <p style="text-align:center; font-size:1.1rem; color:#555; margin-bottom:36px;">From GC documentation to permit timelines, here's what commercial clients typically ask before their first project.</p>
+            <button class="accordion">Do you work directly with general contractors?</button>
+            <div class="panel">
+                <p>Yes. We provide all documentation GCs require: certificate of insurance, W-9, license verification, written scopes of work, and progress documentation throughout the job. We're experienced working on active commercial jobsites in Miami-Dade and Broward.</p>
+            </div>
+            <button class="accordion">What commercial services does ESU provide?</button>
+            <div class="panel">
+                <p>We handle tenant improvements and buildouts, commercial LED lighting retrofits, EV charging station installation, commercial electrical repairs, panel upgrades, and new construction rough-in. We serve offices, restaurants, retail, warehouses, medical facilities, and multifamily properties across South Florida.</p>
+            </div>
+            <button class="accordion">Do you pull permits for commercial work in Miami-Dade and Broward?</button>
+            <div class="panel">
+                <p>Yes. We handle all permit applications, inspections, and final sign-offs with both Miami-Dade County and Broward County building departments. All commercial work is performed under state electrical contractor license EC13007781.</p>
+            </div>
+            <button class="accordion">How quickly can you turn around a commercial estimate?</button>
+            <div class="panel">
+                <p>For most projects, we can provide a written estimate within 24–48 hours of receiving drawings or a project scope. We respond to commercial inquiry calls the same day. If you're on a tight bid deadline, call us directly at 786-930-4300.</p>
             </div>
         </div>
     </section>

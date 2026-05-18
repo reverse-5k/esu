@@ -12,7 +12,7 @@
     <meta property="og:description" content="Residential electrical services in Miami and South Florida: repairs, panel upgrades, generator installation, lighting, wiring, surge protection, and more. Call 786-930-4300.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://esucorp.com/residential.html">
-    <meta property="og:image" content="https://esucorp.com/assets/images/team.png">
+    <meta property="og:image" content="https://esucorp.com/assets/images/hero_bg.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -20,7 +20,7 @@
     <style>
         /* ---- Services Index Specific ---- */
         .services-hero {
-            background: var(--primary-navy);
+            background: linear-gradient(rgba(2, 26, 43, 0.82), rgba(2, 26, 43, 0.82)), url('assets/images/residential-hero.jpg') center/cover no-repeat;
             padding: 100px 5% 80px;
             text-align: center;
             color: white;
@@ -32,7 +32,7 @@
         .svc-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            min-height: 400px;
+            min-height: 480px;
             overflow: hidden;
         }
         .svc-row.reverse .svc-image { order: 2; }
@@ -59,29 +59,9 @@
             inset: 0;
             background: linear-gradient(135deg, rgba(4,42,66,0.55) 0%, rgba(4,42,66,0.1) 100%);
         }
-        .svc-image-icon {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            width: 64px;
-            height: 64px;
-            background: var(--primary-orange);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: white;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        .svc-icon-placeholder {
-            font-size: 8rem;
-            color: var(--primary-orange);
-            opacity: 0.4;
-        }
 
         .svc-content {
-            padding: 60px 50px;
+            padding: 60px 70px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -187,7 +167,6 @@
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="residential.html" class="active">RESIDENTIAL</a></li>
                     <li><a href="commercial.html">COMMERCIAL</a></li>
-                    <li><a href="projects.html">PROJECTS</a></li>
                     <li><a href="about.html">ABOUT</a></li>
                     <li><a href="tips.html">TIPS</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
@@ -223,9 +202,8 @@
     <!-- 1. Electrical Repairs -->
     <div class="svc-row reveal-left">
         <div class="svc-image">
-            <img src="assets/images/electrician.png" alt="Electrician performing emergency electrical repair">
+            <img src="assets/images/electrical-repairs.jpg" alt="Electrician diagnosing and repairing a home electrical issue in Miami"> <!-- Replace with actual electrical repair photo -->
             <div class="svc-image-overlay"></div>
-            <div class="svc-image-icon"><i class="fa-solid fa-plug"></i></div>
         </div>
         <div class="svc-content">
             <span class="svc-label">Most Requested</span>
@@ -244,9 +222,8 @@
     <!-- 2. Panel Upgrades -->
     <div class="svc-row reverse reveal-right">
         <div class="svc-image">
-            <img src="assets/images/electrical_panel.png" alt="Modern electrical panel installed by ESU">
+            <img src="assets/images/electrical-panel.jpg" alt="Modern electrical panel installed by ESU">
             <div class="svc-image-overlay"></div>
-            <div class="svc-image-icon"><i class="fa-solid fa-charging-station"></i></div>
         </div>
         <div class="svc-content">
             <span class="svc-label">Safety Critical</span>
@@ -273,10 +250,8 @@
     <!-- 3. Lighting -->
     <div class="svc-row reveal-left">
         <div class="svc-image" style="background: #021a2b;">
-            <!-- Replace with actual recessed lighting photo -->
-            <div class="svc-icon-placeholder"><i class="fa-regular fa-lightbulb"></i></div>
+            <img src="assets/images/lighting-service.jpg" alt="Beautiful modern outdoor lighting installation by ESU"> <!-- Replace with actual lighting installation photo -->
             <div class="svc-image-overlay"></div>
-            <div class="svc-image-icon"><i class="fa-solid fa-lightbulb"></i></div>
         </div>
         <div class="svc-content">
             <span class="svc-label">Lighting & Fixtures</span>
@@ -295,10 +270,8 @@
     <!-- 4. Generator Installation -->
     <div class="svc-row reverse reveal-right">
         <div class="svc-image" style="background: #021a2b;">
-            <!-- Replace with actual generator photo -->
-            <div class="svc-icon-placeholder"><i class="fa-solid fa-car-battery"></i></div>
+            <img src="assets/images/generator-installation.jpg" alt="Generac standby generator installation in a South Florida home">
             <div class="svc-image-overlay"></div>
-            <div class="svc-image-icon"><i class="fa-solid fa-car-battery"></i></div>
         </div>
         <div class="svc-content">
             <span class="svc-label">Hurricane Season Essential</span>
@@ -317,9 +290,8 @@
     <!-- 5. Electrical Wiring -->
     <div class="svc-row reveal-left">
         <div class="svc-image" style="background: #021a2b;">
-            <div class="svc-icon-placeholder"><i class="fa-solid fa-network-wired"></i></div>
+            <img src="assets/images/wiring-installation.jpg" alt="Electrician running new electrical wiring in a Miami home">
             <div class="svc-image-overlay"></div>
-            <div class="svc-image-icon"><i class="fa-solid fa-network-wired"></i></div>
         </div>
         <div class="svc-content">
             <span class="svc-label">New Construction & Remodels</span>
@@ -338,9 +310,7 @@
     <!-- 6. Surge Protection -->
     <div class="svc-row reverse reveal-right">
         <div class="svc-image" style="background: #021a2b;">
-            <div class="svc-icon-placeholder"><i class="fa-solid fa-shield"></i></div>
             <div class="svc-image-overlay"></div>
-            <div class="svc-image-icon"><i class="fa-solid fa-shield"></i></div>
         </div>
         <div class="svc-content">
             <span class="svc-label">Florida's #1 Risk</span>
@@ -359,9 +329,7 @@
     <!-- 7. EV Charger Installation -->
     <div class="svc-row reveal-left">
         <div class="svc-image" style="background: #021a2b;">
-            <div class="svc-icon-placeholder"><i class="fa-solid fa-charging-station"></i></div>
             <div class="svc-image-overlay"></div>
-            <div class="svc-image-icon"><i class="fa-solid fa-charging-station"></i></div>
         </div>
         <div class="svc-content">
             <span class="svc-label">EV Owners</span>
@@ -380,9 +348,7 @@
     <!-- 8. Electrical Safety Inspection -->
     <div class="svc-row reverse reveal-right">
         <div class="svc-image" style="background: #021a2b;">
-            <div class="svc-icon-placeholder"><i class="fa-solid fa-magnifying-glass"></i></div>
             <div class="svc-image-overlay"></div>
-            <div class="svc-image-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
         </div>
         <div class="svc-content">
             <span class="svc-label">Peace of Mind</span>

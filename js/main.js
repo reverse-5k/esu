@@ -37,13 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li><a href="commercial-buildouts.html">Tenant Improvements</a></li>
                     <li><a href="commercial-lighting.html">Commercial LED Lighting</a></li>
                     <li><a href="commercial-ev-charging.html">Business EV Charging</a></li>
+                    <li><a href="commercial-generators.html">Commercial Generators</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Company</h4>
                 <ul>
                     <li><a href="about.html">About ESU</a></li>
-                    <li><a href="projects.html">Our Projects</a></li>
                     <li><a href="tips.html">Electrical Tips</a></li>
                     <li><a href="service-area-miami.html">Service Area</a></li>
                     <li><a href="contact.html">Contact Us</a></li>

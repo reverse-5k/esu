@@ -5,35 +5,76 @@
     <link rel="canonical" href="https://esucorp.com/commercial-lighting.html">
     <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Commercial LED lighting retrofits and energy upgrades in Miami. Office, warehouse, retail, and parking lot LED installation by ESU. State certified EC13007781. Call 786-930-4300.">
-    <title>Commercial LED Lighting & Energy Upgrades Miami | ESU</title>
+    <meta name="description" content="Commercial LED lighting retrofits and energy upgrades in Miami. Cut energy costs up to 70%. Office, warehouse, retail, parking lot LED installation. Written savings estimate included. Call 786-930-4300.">
+    <title>Commercial LED Lighting Retrofits & Energy Upgrades Miami | ESU</title>
 
-    <meta property="og:title" content="Commercial LED Lighting & Energy Upgrades Miami | ESU">
-    <meta property="og:description" content="Commercial LED lighting retrofits in Miami. Offices, warehouses, retail, parking lots. Up to 70% energy savings. State certified EC13007781.">
+    <meta property="og:title" content="Commercial LED Lighting Retrofits & Energy Upgrades Miami | ESU">
+    <meta property="og:description" content="Commercial LED lighting retrofits in Miami. Up to 70% energy savings for offices, warehouses, retail, parking lots. Written savings estimate included. Call 786-930-4300.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://esucorp.com/commercial-lighting.html">
-    <meta property="og:image" content="https://esucorp.com/assets/images/team.png">
+    <meta property="og:image" content="https://esucorp.com/assets/images/hero_bg.png">
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Commercial LED Lighting Retrofits",
-      "name": "Commercial LED Lighting & Energy Upgrades Miami",
-      "description": "Commercial LED lighting retrofits and energy upgrades for offices, warehouses, retail spaces, and parking lots in Miami and South Florida.",
-      "provider": {
-        "@type": "Electrician",
-        "name": "Electrical Services Unlimited",
-        "telephone": "+17869304300",
-        "url": "https://esucorp.com"
-      },
-      "areaServed": [
-        {"@type": "City", "name": "Miami"},
-        {"@type": "City", "name": "Hialeah"},
-        {"@type": "City", "name": "Doral"},
-        {"@type": "City", "name": "Coral Gables"}
-      ],
-      "url": "https://esucorp.com/commercial-lighting.html"
+      "@graph": [
+        {
+          "@type": "Service",
+          "serviceType": "Commercial LED Lighting Retrofits",
+          "name": "Commercial LED Lighting Retrofits & Energy Upgrades Miami",
+          "description": "Commercial LED lighting retrofits and energy upgrades for offices, warehouses, retail spaces, and parking lots in Miami and South Florida. Written savings estimate included with every project.",
+          "provider": {
+            "@type": "Electrician",
+            "name": "Electrical Services Unlimited",
+            "telephone": "+17869304300",
+            "url": "https://esucorp.com"
+          },
+          "areaServed": [
+            {"@type": "City", "name": "Miami"},
+            {"@type": "City", "name": "Hialeah"},
+            {"@type": "City", "name": "Doral"},
+            {"@type": "City", "name": "Coral Gables"}
+          ],
+          "url": "https://esucorp.com/commercial-lighting.html"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How disruptive is a commercial LED retrofit installation?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For most spaces, LED retrofits cause minimal disruption. We work in phases — a section at a time — so the rest of your building stays operational. For offices, we typically work floor by floor during off-hours or over a weekend. Warehouse and retail retrofits usually stay in the evening and overnight. Most 5,000–10,000 sq ft projects are completed within 1–2 days."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long do commercial LED fixtures last, and do they come with a warranty?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Commercial-grade LED fixtures are rated for 50,000 hours of operation — roughly 11 years at 12 hours per day. Most fixtures we install come with a 5-year manufacturer warranty covering defects and lumen depreciation. In practice, most businesses go 8–10 years without needing a single replacement lamp, which eliminates one of the largest recurring maintenance costs for commercial facilities."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does a commercial LED lighting project take?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most commercial LED retrofits in Miami are completed in 1–3 business days. A 5,000 sq ft office is typically a single day's work. A 20,000 sq ft warehouse with high-bay fixtures usually takes 2–3 days. We provide a realistic timeline in the estimate based on fixture count, ceiling height, and access requirements — not a number designed to win the bid."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does LED lighting really make a measurable difference in energy costs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes — the energy savings from commercial LED retrofits are consistent and measurable. A typical office replacing T8 fluorescent troffers with LED panels reduces lighting energy draw by 65–75%. A warehouse replacing metal halide high-bays with LED sees 60–70% reduction. Most commercial properties see their first FPL bill reduction within the first billing cycle after installation."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
 
@@ -42,8 +83,18 @@
     <link rel="stylesheet" href="css/styles.css">
 
     <style>
+        /* Override grid-3 to exactly 3 columns on this page */
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media (max-width: 960px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .grid-3 { grid-template-columns: 1fr; } }
+
         .com-lighting-hero {
-            background: linear-gradient(rgba(4, 42, 66, 0.78), rgba(4, 42, 66, 0.78)), url('assets/images/lighting-hero.png') center/cover no-repeat;
+            background: radial-gradient(ellipse at 50% -10%, #1e4a6a 0%, #042a42 55%, #021a2b 100%);
+            border-bottom: 3px solid var(--primary-orange);
+            position: relative;
+            overflow: hidden;
             padding: 110px 20px 100px;
             text-align: center;
             color: white;
@@ -87,9 +138,7 @@
             gap: 60px;
             flex-wrap: wrap;
         }
-        .savings-item {
-            text-align: center;
-        }
+        .savings-item { text-align: center; }
         .savings-item .savings-num {
             font-family: 'Outfit', sans-serif;
             font-size: 2.6rem;
@@ -99,11 +148,25 @@
         }
         .savings-item p {
             color: rgba(255,255,255,0.8);
-            font-size: 0.9rem;
-            margin: 6px 0 0;
+            font-size: 0.85rem;
+            margin: 8px 0 0;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
+
+        /* Left-border service cards */
+        .com-card {
+            background: white;
+            border-left: 5px solid var(--primary-orange);
+            border-radius: 0 8px 8px 0;
+            padding: 32px 28px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .com-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,0.12); }
+        .com-card i { font-size: 2rem; color: var(--primary-orange); margin-bottom: 16px; display: block; }
+        .com-card h3 { font-size: 1.15rem; color: var(--primary-navy); margin-bottom: 10px; }
+        .com-card p { font-size: 0.95rem; color: #555; line-height: 1.65; margin: 0; }
 
         /* ROI table */
         .roi-table {
@@ -127,8 +190,24 @@
         .roi-table tr:nth-child(even) td { background: #f8f9fa; }
         .roi-table td:first-child { font-weight: 600; color: var(--primary-navy); }
 
+        /* Disruption callout */
+        .disruption-box {
+            background: #fff8e1;
+            border-left: 6px solid var(--primary-orange);
+            border-radius: 0 10px 10px 0;
+            padding: 36px 44px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .disruption-box h3 { font-size: 1.5rem; color: var(--primary-navy); margin-bottom: 12px; }
+        .disruption-box p { font-size: 1rem; color: #555; line-height: 1.7; margin-bottom: 12px; }
+        .disruption-box ul { list-style: none; padding: 0; margin: 0; }
+        .disruption-box ul li { display:flex; gap:10px; align-items:flex-start; padding: 6px 0; font-size: 0.95rem; color: #444; }
+        .disruption-box ul li i { color: var(--primary-orange); flex-shrink:0; margin-top:2px; }
+
         @media (max-width: 700px) {
             .savings-strip { gap: 30px; }
+            .disruption-box { padding: 24px; }
         }
     </style>
 </head>
@@ -142,7 +221,7 @@
         <div class="contact-info">
             <i class="fa-solid fa-phone"></i> <a href="tel:+17869304300">786-930-4300</a>
         </div>
-        <div class="hours">
+        <div>
             <i class="fa-solid fa-bolt" style="color: var(--primary-orange);"></i> 24/7 Emergency Service
         </div>
     </div>
@@ -158,7 +237,6 @@
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="residential.html">RESIDENTIAL</a></li>
                     <li><a href="commercial.html" class="active">COMMERCIAL</a></li>
-                    <li><a href="projects.html">PROJECTS</a></li>
                     <li><a href="about.html">ABOUT</a></li>
                     <li><a href="tips.html">TIPS</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
@@ -171,15 +249,19 @@
     <section class="com-lighting-hero reveal">
         <div class="badge">Commercial LED Lighting</div>
         <h1>Cut Your Electric Bill by Up to 70%. We Install This Week.</h1>
-        <p>LED retrofits for offices, warehouses, retail floors, and parking lots. The fastest-payback upgrade most commercial buildings haven't made yet.</p>
-        <a href="tel:+17869304300" class="btn btn-primary"><i class="fa-solid fa-phone"></i> &nbsp;Call 786-930-4300</a>
+        <p>LED retrofits for offices, warehouses, retail floors, and parking lots throughout Miami-Dade and Broward. The fastest-payback electrical upgrade most commercial properties haven't made yet.</p>
+        <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+            <a href="tel:+17869304300" class="btn btn-primary"><i class="fa-solid fa-phone"></i>&nbsp; Call 786-930-4300</a>
+            <a href="#get-quote" class="btn btn-outline-white">Get a Free Estimate</a>
+        </div>
     </section>
 
     <div class="trust-bar reveal">
         <div class="trust-item"><i class="fa-solid fa-certificate"></i> Licensed EC13007781</div>
         <div class="trust-item"><i class="fa-solid fa-bolt"></i> Up to 70% Energy Savings</div>
-        <div class="trust-item"><i class="fa-solid fa-file-invoice-dollar"></i> Rebate Documentation</div>
+        <div class="trust-item"><i class="fa-solid fa-file-invoice-dollar"></i> Written Savings Estimate</div>
         <div class="trust-item"><i class="fa-solid fa-calendar-check"></i> Minimal Disruption</div>
+        <div class="trust-item"><i class="fa-solid fa-moon"></i> After-Hours Install Available</div>
     </div>
 
     <!-- Savings strip -->
@@ -189,74 +271,88 @@
             <p>Typical Energy Reduction</p>
         </div>
         <div class="savings-item">
-            <span class="savings-num">50K</span>
-            <p>Hour LED Lifespan</p>
+            <span class="savings-num">50K hrs</span>
+            <p>LED Rated Lifespan</p>
         </div>
         <div class="savings-item">
             <span class="savings-num">18 mo</span>
             <p>Average Payback Period</p>
         </div>
         <div class="savings-item">
-            <span class="savings-num">Zero</span>
-            <p>Bulb Replacements for Years</p>
+            <span class="savings-num">5 yr</span>
+            <p>Fixture Warranty</p>
         </div>
     </div>
 
     <!-- Services Grid -->
     <section class="section bg-light">
         <div class="reveal" style="max-width: 800px; margin: 0 auto 44px; text-align: center;">
-            <h2 class="section-title">Commercial Lighting Services</h2>
-            <p style="font-size: 1.15rem;">We handle every type of commercial lighting installation and retrofit, from a single-suite office to a full warehouse or parking structure.</p>
+            <h2 class="section-title">Commercial Lighting Services in Miami</h2>
+            <p style="font-size: 1.15rem;">We handle every type of commercial lighting installation and retrofit — from a single-suite office to a full warehouse campus or parking structure.</p>
         </div>
 
-        <div class="grid-3 reveal">
-            <div class="card">
-                <i class="fa-solid fa-building" style="color: var(--primary-orange);"></i>
+        <div class="grid-3 reveal" style="gap: 24px;">
+            <div class="com-card">
+                <i class="fa-solid fa-building"></i>
                 <h3>Office LED Upgrades</h3>
-                <p>Replace outdated fluorescent troffers with modern LED panels. Better color rendering, less flicker, and dramatically lower energy costs — with minimal disruption during business hours.</p>
+                <p>Replace outdated fluorescent troffers with modern LED panels. Better color rendering, less flicker, and dramatically lower energy costs. We phase the work so your team stays productive throughout.</p>
             </div>
-            <div class="card">
-                <i class="fa-solid fa-warehouse" style="color: var(--primary-orange);"></i>
+            <div class="com-card">
+                <i class="fa-solid fa-warehouse"></i>
                 <h3>Warehouse High-Bay LED</h3>
-                <p>High-bay LED fixtures deliver 2–3x more usable light than outdated metal halide or fluorescent T5 systems, with no warm-up time and zero maintenance for years.</p>
+                <p>LED high-bay fixtures deliver 2–3x more usable light than metal halide or T5 fluorescent systems, with no warm-up time and zero lamp replacements for years. Dramatically improves worker visibility and safety.</p>
             </div>
-            <div class="card">
-                <i class="fa-solid fa-store" style="color: var(--primary-orange);"></i>
+            <div class="com-card">
+                <i class="fa-solid fa-store"></i>
                 <h3>Retail & Showroom Lighting</h3>
-                <p>LED track lighting, recessed fixtures, and display lighting that make merchandise look better and cut your energy bill at the same time. We work around your store hours.</p>
+                <p>LED track lighting, recessed fixtures, and display lighting that make merchandise look better and reduce energy costs at the same time. We coordinate around your store hours and merchandising layouts.</p>
             </div>
-            <div class="card">
-                <i class="fa-solid fa-car" style="color: var(--primary-orange);"></i>
+            <div class="com-card">
+                <i class="fa-solid fa-car"></i>
                 <h3>Parking Lot & Exterior</h3>
-                <p>Replace sodium vapor and metal halide parking lot fixtures with LED shoebox lights. Better coverage, lower maintenance, and significant energy savings on one of the highest-draw circuits in most commercial buildings.</p>
+                <p>Replace sodium vapor and metal halide parking lot fixtures with LED shoebox lights. Better coverage, dramatically lower maintenance costs, and significant energy savings on one of the highest-draw circuits on most commercial properties.</p>
             </div>
-            <div class="card">
-                <i class="fa-solid fa-door-open" style="color: var(--primary-orange);"></i>
+            <div class="com-card">
+                <i class="fa-solid fa-door-open"></i>
                 <h3>Emergency & Exit Lighting</h3>
-                <p>Code-required emergency lighting and exit signs that actually work when power goes out. We install, test, and provide the documentation required for your certificate of occupancy.</p>
+                <p>Code-required emergency lighting and exit signs that actually work when grid power fails. We install, test, and provide all documentation required for certificate of occupancy and annual fire inspections.</p>
             </div>
-            <div class="card">
-                <i class="fa-solid fa-magnifying-glass-chart" style="color: var(--primary-orange);"></i>
-                <h3>Energy Audit & Rebate Help</h3>
-                <p>We assess your current fixtures, calculate projected savings, and prepare the documentation you need to apply for FPL commercial energy efficiency rebates — which can offset 30–50% of project costs.</p>
+            <div class="com-card">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                <h3>Pre-Project Energy Audit</h3>
+                <p>Before we quote anything, we assess your current fixtures, calculate projected wattage reduction, and give you a realistic monthly savings estimate in writing. No guesswork — you'll know the numbers before you commit to a single fixture.</p>
             </div>
         </div>
     </section>
 
-    <!-- ROI section -->
+    <!-- Disruption callout -->
     <section class="section">
+        <div class="disruption-box reveal">
+            <h3><i class="fa-solid fa-clock" style="color: var(--primary-orange); margin-right: 10px;"></i>We Work Around Your Business Hours</h3>
+            <p>The most common reason businesses delay LED upgrades is the fear of disruption. In reality, most commercial lighting retrofits can be phased or scheduled around your operation:</p>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> <strong>Offices:</strong> Floor-by-floor phasing or weekend installation keeps employees working throughout the project.</li>
+                <li><i class="fa-solid fa-check"></i> <strong>Retail & Restaurants:</strong> We schedule work during off-hours or overnight so your business never closes for lighting.</li>
+                <li><i class="fa-solid fa-check"></i> <strong>Warehouses:</strong> Section-by-section work keeps your operation running during normal business hours.</li>
+                <li><i class="fa-solid fa-check"></i> <strong>Parking Lots:</strong> Night work with temporary lighting keeps the lot safe while fixtures are replaced.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ROI section -->
+    <section class="section bg-light">
         <div class="reveal" style="max-width: 860px; margin: 0 auto 40px; text-align: center;">
             <h2 class="section-title">What the Numbers Look Like</h2>
-            <p style="font-size: 1.15rem; color: #555;">Commercial LED upgrades are not a luxury purchase — they're a straightforward investment with a predictable return. Here's a realistic example for a mid-size office or retail space.</p>
+            <p style="font-size: 1.15rem; color: #555;">Commercial LED upgrades are a straightforward investment with a predictable return. These are realistic numbers for South Florida commercial properties based on FPL's commercial rates.</p>
         </div>
         <div class="reveal" style="max-width: 860px; margin: 0 auto; overflow-x: auto;">
             <table class="roi-table">
                 <thead>
                     <tr>
                         <th>Space Type</th>
-                        <th>Typical Old System</th>
+                        <th>Current System</th>
                         <th>After LED Retrofit</th>
-                        <th>Monthly Savings</th>
+                        <th>Est. Monthly Savings</th>
                         <th>Payback Period</th>
                     </tr>
                 </thead>
@@ -291,22 +387,66 @@
                     </tr>
                 </tbody>
             </table>
-            <p style="font-size: 0.85rem; color: #888; margin-top: 14px;">Estimates based on $0.12/kWh commercial rate. Actual savings vary by utility rate, fixture count, and operating hours.</p>
+            <p style="font-size: 0.85rem; color: #888; margin-top: 14px;">Estimates based on average South Florida commercial electricity rates (~$0.12–$0.14/kWh). Actual savings vary by utility rate, fixture count, and daily operating hours.</p>
         </div>
     </section>
 
-    <!-- FPL Rebate callout -->
-    <section class="section" style="background: var(--primary-navy); color: white; text-align: center;">
-        <div class="reveal" style="max-width: 780px; margin: 0 auto;">
-            <i class="fa-solid fa-receipt" style="font-size: 3rem; color: var(--primary-orange); display: block; margin-bottom: 24px;"></i>
-            <h2 style="color: white; font-size: 2.4rem; margin-bottom: 20px;">FPL Business Rebates Can Cover 30–50% of Your Project Cost</h2>
-            <p style="font-size: 1.15rem; opacity: 0.88; margin-bottom: 30px;">Florida Power & Light offers commercial energy efficiency rebates for LED lighting upgrades. Most businesses leave this money on the table because the paperwork feels complicated. We prepare the rebate application as part of our project documentation — at no extra charge.</p>
-            <a href="tel:+17869304300" class="btn btn-primary"><i class="fa-solid fa-phone"></i>&nbsp; Ask About Rebates: 786-930-4300</a>
+    <!-- What's Included callout -->
+    <section class="section" style="background: var(--primary-navy); color: white;">
+        <div class="reveal" style="max-width: 900px; margin: 0 auto;">
+            <h2 style="color: white; font-size: 2.2rem; margin-bottom: 10px; text-align: center;">What Every Commercial Lighting Project Includes</h2>
+            <p style="font-size: 1.1rem; opacity: 0.85; text-align: center; margin-bottom: 40px;">No hidden costs. No change orders after the fact. Here's what we deliver on every job, from a single suite to a full building.</p>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+                <div style="background: rgba(255,255,255,0.07); border-top: 3px solid var(--primary-orange); border-radius: 8px; padding: 28px 24px;">
+                    <i class="fa-solid fa-magnifying-glass" style="font-size: 1.8rem; color: var(--primary-orange); display: block; margin-bottom: 14px;"></i>
+                    <h4 style="color: white; font-size: 1.05rem; margin-bottom: 10px;">Site Walk & Fixture Count</h4>
+                    <p style="font-size: 0.9rem; opacity: 0.8; line-height: 1.65; margin: 0;">We physically walk the space, count every fixture, and note ceiling heights, mounting types, and access requirements before writing a number.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.07); border-top: 3px solid var(--primary-orange); border-radius: 8px; padding: 28px 24px;">
+                    <i class="fa-solid fa-file-invoice" style="font-size: 1.8rem; color: var(--primary-orange); display: block; margin-bottom: 14px;"></i>
+                    <h4 style="color: white; font-size: 1.05rem; margin-bottom: 10px;">Written Estimate with Savings Projection</h4>
+                    <p style="font-size: 0.9rem; opacity: 0.8; line-height: 1.65; margin: 0;">You get a line-item estimate plus a projected monthly energy savings figure so you can calculate your own payback period before committing.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.07); border-top: 3px solid var(--primary-orange); border-radius: 8px; padding: 28px 24px;">
+                    <i class="fa-solid fa-calendar-check" style="font-size: 1.8rem; color: var(--primary-orange); display: block; margin-bottom: 14px;"></i>
+                    <h4 style="color: white; font-size: 1.05rem; margin-bottom: 10px;">Phased Schedule Around Your Hours</h4>
+                    <p style="font-size: 0.9rem; opacity: 0.8; line-height: 1.65; margin: 0;">We plan the work around when your space is least active — evenings, weekends, or section-by-section during business hours — so your operation isn't interrupted.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 36px;">
+                <a href="tel:+17869304300" class="btn btn-primary"><i class="fa-solid fa-phone"></i>&nbsp; Call 786-930-4300 for a Free Estimate</a>
+            </div>
         </div>
     </section>
 
-    <!-- Get a Quote Form -->
-    <section class="section bg-light" id="get-quote">
+    <!-- FAQ -->
+    <section class="section bg-light">
+        <h2 class="section-title reveal">Common Questions</h2>
+        <div class="faq-container reveal">
+            <button class="accordion">How disruptive is a commercial LED retrofit installation?</button>
+            <div class="panel">
+                <p>For most spaces, LED retrofits cause minimal disruption. We work in phases — a section at a time — so the rest of your space stays operational. For offices, we typically work floor by floor or during off-hours. Warehouse and retail retrofits are usually evenings and overnights. Most 5,000–10,000 sq ft projects are completed in 1–2 days.</p>
+            </div>
+
+            <button class="accordion">How long do commercial LED fixtures last, and do they come with a warranty?</button>
+            <div class="panel">
+                <p>Commercial-grade LED fixtures are rated for 50,000 hours — roughly 11 years at 12 hours per day. Most fixtures we install carry a 5-year manufacturer warranty covering defects and lumen depreciation. For most businesses, this means zero lamp replacements for the better part of a decade, which eliminates one of the larger recurring maintenance line items in a facility budget.</p>
+            </div>
+
+            <button class="accordion">How long does a commercial LED lighting project take?</button>
+            <div class="panel">
+                <p>Most commercial LED retrofits are completed in 1–3 business days. A 5,000 sq ft office is typically a single day. A 20,000 sq ft warehouse with high-bay fixtures usually takes 2–3 days. We give you a realistic timeline in the estimate based on fixture count, ceiling height, and access requirements.</p>
+            </div>
+
+            <button class="accordion">Do LED lights actually make a measurable difference in energy costs?</button>
+            <div class="panel">
+                <p>Yes — the savings are consistent and measurable. Replacing T8 fluorescent troffers with LED panels typically reduces lighting energy draw by 65–75%. Warehouse metal halide to LED sees 60–70% reduction. Most South Florida businesses see their first FPL bill reduction within the first billing cycle after installation. We can provide projected savings specific to your building before you commit to anything.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Form -->
+    <section class="section" id="get-quote">
         <div style="max-width: 820px; margin: 0 auto; text-align: center;">
             <h2 style="font-size: 2.2rem; margin-bottom: 12px;">Get a Free Commercial Lighting Estimate</h2>
             <p style="color: #666; margin-bottom: 35px; font-size: 1.05rem;">Tell us your space type, square footage, and what you're currently running. We'll put together a savings estimate and project cost within 24 hours. Call <a href="tel:+17869304300" style="color: var(--primary-orange); font-weight: 700;">786-930-4300</a> to speak with someone directly.</p>
@@ -320,7 +460,7 @@
     <section class="section bg-dark" style="text-align: center;">
         <div class="reveal">
             <h2 style="font-size: 3rem; margin-bottom: 20px;">Ready to Lower Your Electric Bill?</h2>
-            <p style="font-size: 1.3rem; margin-bottom: 40px; opacity: 0.9;">Most commercial LED projects are installed in 1–3 days with no interruption to your business operations.</p>
+            <p style="font-size: 1.3rem; margin-bottom: 40px; opacity: 0.9;">Most commercial LED projects are completed in 1–3 days with no interruption to your business.</p>
             <a href="tel:+17869304300" class="btn btn-primary" style="font-size: 1.5rem; padding: 20px 50px; box-shadow: 0 10px 30px rgba(241, 144, 28, 0.5);"><i class="fa-solid fa-phone"></i> CALL 786-930-4300</a>
         </div>
     </section>

@@ -87,17 +87,17 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://esucorp.com/commercial-generators.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Company Pages -->
   <url>
     <loc>https://esucorp.com/service-area-miami.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://esucorp.com/projects.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 
   <url>
