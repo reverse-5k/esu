@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/kwx16fxz247g/public_html/
+    - /bin/cp -R * $DEPLOYPATH
