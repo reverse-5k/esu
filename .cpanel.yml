@@ -1,5 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/kwx16fxz247g/public_html/
+    - export DEPLOYPATH=/home/kwx16fxz247g/esucorp_static/
+    - /bin/mkdir -p $DEPLOYPATH
     - /bin/cp -R * $DEPLOYPATH
