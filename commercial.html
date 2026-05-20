@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M7VQ7XT9');</script>
+<!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -159,7 +166,24 @@
             letter-spacing: 1px;
             font-weight: 600;
         }
+        @media (max-width: 900px) {
+            .svc-row, .svc-row.reverse { grid-template-columns: 1fr; }
+            .svc-row.reverse .svc-image { order: 1; }
+            .svc-row.reverse .svc-content { order: 2; }
+            .svc-image { min-height: 260px; }
+            .svc-content { padding: 40px 25px; }
+        }
+        @media (max-width: 768px) {
+            .commercial-hero { padding: 70px 5% 60px; }
+            .stat-strip { flex-wrap: wrap; justify-content: center; }
+            .stat-item { border-right: none; flex: 1 1 120px; }
+        }
         @media (max-width: 700px) { .stat-item { border-right: none; padding: 14px 20px; } }
+        @media (max-width: 480px) {
+            .commercial-hero { padding: 50px 5% 44px; }
+            .stat-num { font-size: 1.8rem; }
+            .cta-band h2 { font-size: 1.7rem; }
+        }
         .industry-card {
             background: white;
             border-radius: 8px;
@@ -222,42 +246,11 @@
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7VQ7XT9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="site-header"></div>
 
-    <div class="mobile-sticky-cta">
-        <a href="tel:+17869304300"><i class="fa-solid fa-phone"></i>&nbsp; Commercial Quote: 786-930-4300</a>
-    </div>
-
-    <div class="top-bar">
-        <div class="contact-info">
-            <i class="fa-solid fa-phone"></i>&nbsp;<a href="tel:+17869304300">786-930-4300</a>
-            &nbsp;&nbsp;|&nbsp;&nbsp;
-            <i class="fa-solid fa-envelope"></i>&nbsp;<a href="mailto:info@esucorp.com">info@esucorp.com</a>
-        </div>
-        <div>
-            <i class="fa-solid fa-bolt" style="color: var(--primary-orange);"></i>
-            <strong style="color:white;"> 24/7 Emergency Service</strong>
-        </div>
-    </div>
-
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" class="logo-img" alt="ESU — Electrical Services Unlimited">
-            </a>
-            <button class="mobile-menu-btn" aria-label="Open navigation menu"><i class="fa-solid fa-bars"></i></button>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="residential.html">RESIDENTIAL</a></li>
-                    <li><a href="commercial.html" class="active">COMMERCIAL</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="tips.html">TIPS</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                </ul>
-            </nav>
-            <a href="tel:+17869304300" class="btn btn-primary"><i class="fa-solid fa-phone"></i>&nbsp; 786-930-4300</a>
-        </div>
-    </header>
 
     <!-- Hero -->
     <div class="commercial-hero">
@@ -345,6 +338,7 @@
     <!-- 1. Buildouts -->
     <div class="svc-row reveal-left">
         <div class="svc-image" style="background: #021a2b;">
+            <img src="assets/images/newconstruction.jpeg" alt="Electrician running conduit and wiring during a commercial tenant improvement project in Miami">
             <div class="svc-image-overlay"></div>
         </div>
         <div class="svc-content">
@@ -364,6 +358,7 @@
     <!-- 2. Commercial Lighting -->
     <div class="svc-row reverse reveal-right">
         <div class="svc-image" style="background: #021a2b;">
+            <img src="assets/images/officelighting.jpg" alt="Electrician replacing fluorescent tubes with LED fixtures during a commercial lighting retrofit in Miami">
             <div class="svc-image-overlay"></div>
         </div>
         <div class="svc-content">
@@ -391,12 +386,13 @@
     <!-- 3. Commercial EV Charging -->
     <div class="svc-row reveal-left">
         <div class="svc-image" style="background: #021a2b;">
+            <img src="assets/images/commercialevs.png" alt="Electrician installing a commercial EV charging station in a parking lot in Miami">
             <div class="svc-image-overlay"></div>
         </div>
         <div class="svc-content">
             <span class="svc-label">Fast-Growing Business Amenity</span>
             <h2>Commercial EV Charging Stations</h2>
-            <p>Multi-unit Level 2 and DC fast chargers for parking lots, apartment communities, hotels, and office buildings. We size the electrical service, install the infrastructure, and coordinate with the utility so your stations go live on schedule — with full permit documentation for any available tax credits.</p>
+            <p>Multi-unit Level 2 and DC fast chargers for parking lots, apartment communities, hotels, and office buildings. We size the electrical service, install the infrastructure, and coordinate with the utility so your stations go live on schedule — with full permit documentation and project closeout.</p>
             <ul class="svc-bullets">
                 <li><i class="fa-solid fa-check-circle"></i> Level 2 multi-port stations (4, 8, 16+ ports)</li>
                 <li><i class="fa-solid fa-check-circle"></i> DC fast charger installation</li>
@@ -410,6 +406,7 @@
     <!-- 4. Commercial Generators -->
     <div class="svc-row reverse reveal-right">
         <div class="svc-image" style="background: #021a2b;">
+            <img src="assets/images/commericalgenerator.jpeg" alt="Electrician installing a commercial standby generator and automatic transfer switch in Miami">
             <div class="svc-image-overlay"></div>
         </div>
         <div class="svc-content">
@@ -429,7 +426,7 @@
     <!-- 5. Commercial Repairs & Maintenance -->
     <div class="svc-row reveal-left">
         <div class="svc-image">
-            <!-- IMAGE PLACEHOLDER: Electrician troubleshooting or repairing in a commercial space — left image panel of the Commercial Repairs service row (commercial.html) -->
+            <img src="assets/images/commercialrepair.jpg" alt="Electrician troubleshooting or repairing in a commercial space">
             <div class="svc-image-overlay"></div>
         </div>
         <div class="svc-content">
@@ -489,7 +486,7 @@
     <!-- FAQ -->
     <section class="section bg-light">
         <div class="reveal" style="max-width: 800px; margin: 0 auto;">
-            <h2 class="section-title" style="text-align:center; margin-bottom: 10px;">Commercial Electrical — Common Questions</h2>
+            <h2 class="section-title" style="text-align:center; margin-bottom: 48px;">Commercial Electrical — Common Questions</h2>
             <p style="text-align:center; font-size:1.1rem; color:#555; margin-bottom:36px;">From GC documentation to permit timelines, here's what commercial clients typically ask before their first project.</p>
             <button class="accordion">Do you work directly with general contractors?</button>
             <div class="panel">

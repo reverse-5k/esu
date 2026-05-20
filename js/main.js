@@ -1,6 +1,76 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 0. Inject shared footer
+    // 0a. Inject shared header
+    (function() {
+        const el = document.getElementById('site-header');
+        if (!el) return;
+        const page = window.location.pathname.split('/').pop() || 'index.html';
+        const navMap = {
+            'index.html': 'HOME', '': 'HOME',
+            'residential.html': 'RESIDENTIAL',
+            'electrical-repairs.html': 'RESIDENTIAL',
+            'panel-upgrades.html': 'RESIDENTIAL',
+            'generator-installation.html': 'RESIDENTIAL',
+            'lighting.html': 'RESIDENTIAL',
+            'electrical-wiring.html': 'RESIDENTIAL',
+            'surge-protection.html': 'RESIDENTIAL',
+            'ev-charger-installation.html': 'RESIDENTIAL',
+            'electrical-inspection.html': 'RESIDENTIAL',
+            'commercial.html': 'COMMERCIAL',
+            'commercial-buildouts.html': 'COMMERCIAL',
+            'commercial-lighting.html': 'COMMERCIAL',
+            'commercial-ev-charging.html': 'COMMERCIAL',
+            'commercial-generators.html': 'COMMERCIAL',
+            'about.html': 'ABOUT',
+            'tips.html': 'TIPS',
+            'contact.html': 'CONTACT',
+        };
+        const active = navMap[page] || '';
+        const nav = ['HOME','RESIDENTIAL','COMMERCIAL','ABOUT','TIPS','CONTACT'];
+        const hrefs = {
+            HOME: 'index.html', RESIDENTIAL: 'residential.html',
+            COMMERCIAL: 'commercial.html', ABOUT: 'about.html',
+            TIPS: 'tips.html', CONTACT: 'contact.html'
+        };
+        const navItems = nav.map(n =>
+            `<li><a href="${hrefs[n]}"${n === active ? ' class="active"' : ''}>${n}</a></li>`
+        ).join('\n                    ');
+        el.outerHTML = `
+    <div class="mobile-sticky-cta">
+        <a href="tel:+17869304300"><i class="fa-solid fa-phone"></i>&nbsp; Call 786-930-4300</a>
+    </div>
+    <div class="top-bar">
+        <div class="contact-info">
+            <i class="fa-solid fa-phone"></i>&nbsp;<a href="tel:+17869304300">786-930-4300</a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fa-solid fa-envelope"></i>&nbsp;<a href="mailto:info@esucorp.com">info@esucorp.com</a>
+        </div>
+        <div>
+            <i class="fa-solid fa-star" style="color: #FFD700;"></i>
+            <strong style="color:white;"> 4.9/5</strong>
+            <span style="color:#ccc;"> — 85 Google Reviews</span>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fa-solid fa-bolt" style="color: var(--primary-orange);"></i>
+            <strong style="color:white;"> 24/7 Emergency Service</strong>
+        </div>
+    </div>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" class="logo-img" alt="ESU — Electrical Services Unlimited">
+            </a>
+            <button class="mobile-menu-btn" aria-label="Open navigation menu"><i class="fa-solid fa-bars"></i></button>
+            <nav>
+                <ul class="nav-links">
+                    ${navItems}
+                </ul>
+            </nav>
+            <a href="tel:+17869304300" class="btn btn-primary"><i class="fa-solid fa-phone"></i>&nbsp; 786-930-4300</a>
+        </div>
+    </header>`;
+    })();
+
+    // 0b. Inject shared footer
     (function() {
         const el = document.getElementById('site-footer');
         if (!el) return;

@@ -38,10 +38,6 @@
 .stat-number { font-family: var(--font-heading); font-size: 4rem; font-weight: 900; color: var(--primary-orange); display: inline; }
 .stat-suffix { font-family: var(--font-heading); font-size: 3rem; font-weight: 900; color: var(--primary-orange); }
 .stat-card p { color: rgba(255,255,255,0.7); font-size: 1rem; margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; }
-@media (max-width: 768px) {
-  .stats-grid { grid-template-columns: 1fr 1fr; }
-  .stat-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
-}
 
 /* ========== CARD LINK ========== */
 .card-link { display: block; color: var(--primary-orange); font-weight: 700; margin-top: 15px; }
@@ -189,7 +185,9 @@ header .btn { padding: 11px 22px; font-size: 0.95rem; }
 .panel p { padding: 20px 0; }
 
 /* Grid Cards (Services, Values) */
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+@media (max-width: 900px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .grid-3 { grid-template-columns: 1fr; } }
 .services-flex { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
 .services-flex .card { flex: 0 1 320px; min-width: 260px; }
 .card { background: white; padding: 50px 30px; border-radius: 12px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: var(--transition); border-top: 5px solid transparent; }
@@ -229,15 +227,139 @@ footer { background-color: var(--secondary-navy); color: white; padding: 80px 5%
   .top-bar { flex-direction: column; gap: 10px; text-align: center; }
   .mobile-sticky-cta { display: block; }
   body { padding-bottom: 60px; }
-  .trust-bar { flex-direction: column; gap: 20px; }
+  .trust-bar { flex-direction: column; gap: 20px; align-items: center; }
+  .trust-item { font-size: 1rem; }
   .section { padding: 60px 5%; }
   header .btn { display: none; }
+
+  /* Section titles */
+  .section-title { font-size: 2.2rem; }
+
+  /* Stats grid */
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .stat-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .stat-number { font-size: 2.8rem; }
+  .stat-suffix { font-size: 2.2rem; }
+
+  /* Stat strips (inline flex on service pages) */
+  .stat-strip { gap: 24px !important; padding: 36px 5% !important; }
+
+  /* Cards */
+  .card { padding: 36px 20px; }
+  .card h3 { font-size: 1.5rem; }
+
+  /* Guarantee box */
+  .guarantee-box { padding: 40px 24px; }
+
+  /* Booking widget */
+  .booking-widget-container { padding: 36px 24px; }
+
+  /* Landing hero */
+  .landing-hero { padding: 70px 5% 60px !important; }
+  .landing-hero h1 { font-size: 2.6rem; }
+
+  /* Hero */
+  .hero { min-height: 60vh; height: auto; padding: 60px 5%; }
+
+  /* Accordion / FAQ */
+  .accordion { font-size: 1.05rem; padding: 20px; }
+  .panel { padding: 0 20px; }
+
+  /* Feature list */
+  .feature-list li { font-size: 1.05rem; }
+
+  /* Button touch targets */
+  .btn { min-height: 44px; padding: 13px 28px; }
+
+  /* Nav links touch target */
+  .nav-links li a { padding: 12px 8px; display: block; min-height: 44px; }
 }
+
 @media (max-width: 480px) {
   .hero-content h1 { font-size: 2.2rem; }
   .hero-content p { font-size: 1.1rem; }
-  .landing-hero h1 { font-size: 2.4rem; }
+  .landing-hero h1 { font-size: 2rem; }
+  .landing-hero p { font-size: 1rem; }
   .hero-buttons { flex-direction: column; gap: 12px; }
-  .hero-buttons .btn { text-align: center; }
-  .booking-widget-container { padding: 30px 20px; }
+  .hero-buttons .btn { text-align: center; width: 100%; }
+  .booking-widget-container { padding: 24px 16px; }
+
+  /* Section titles smaller on narrow phones */
+  .section-title { font-size: 1.85rem; }
+
+  .stat-number { font-size: 2.4rem; }
+  .stat-suffix { font-size: 1.8rem; }
+
+  /* Stat strip large numbers */
+  .stat-strip { gap: 20px !important; padding: 32px 5% !important; }
+
+  /* Cards */
+  .card { padding: 28px 16px; }
+
+  /* Guarantee box */
+  .guarantee-box { padding: 30px 16px; }
+
+  /* Section padding */
+  .section { padding: 44px 5%; }
+
+  /* Trust item */
+  .trust-item { font-size: 0.95rem; gap: 10px; }
+  .trust-item i { font-size: 2rem; }
+
+  /* Feature list */
+  .feature-list li { font-size: 1rem; gap: 10px; }
+
+  /* Two column */
+  .two-column { gap: 32px; }
+
+  /* Inline large headings used in CTAs across pages */
+  .section h2[style*="font-size: 3rem"],
+  .section h2[style*="font-size:3rem"] {
+    font-size: 1.8rem !important;
+  }
+  .section h2[style*="font-size: 2.8rem"],
+  .section h2[style*="font-size:2.8rem"] {
+    font-size: 1.7rem !important;
+  }
+  .section h2[style*="font-size: 2.5rem"],
+  .section h2[style*="font-size:2.5rem"] {
+    font-size: 1.7rem !important;
+  }
+  .section h2[style*="font-size: 2.4rem"],
+  .section h2[style*="font-size:2.4rem"] {
+    font-size: 1.6rem !important;
+  }
+  .section h2[style*="font-size: 2.2rem"],
+  .section h2[style*="font-size:2.2rem"] {
+    font-size: 1.5rem !important;
+  }
+  /* Large h1 on service-area-miami inline hero */
+  h1[style*="font-size: 3.5rem"],
+  h1[style*="font-size:3.5rem"] {
+    font-size: 2rem !important;
+  }
+  /* Large call buttons in CTA sections */
+  .section a.btn[style*="font-size: 1.5rem"],
+  .section a.btn[style*="font-size:1.5rem"] {
+    font-size: 1.1rem !important;
+    padding: 14px 28px !important;
+  }
+  .section a.btn[style*="font-size: 1.4rem"],
+  .section a.btn[style*="font-size:1.4rem"],
+  .section a.btn[style*="font-size: 1.3rem"],
+  .section a.btn[style*="font-size:1.3rem"] {
+    font-size: 1.05rem !important;
+    padding: 14px 24px !important;
+  }
+  /* service-area hero section */
+  section[style*="padding: 100px 5%"] h1 {
+    font-size: 2rem !important;
+  }
+  section[style*="padding: 100px 5%"] p[style*="font-size: 1.3rem"] {
+    font-size: 1.05rem !important;
+  }
+  /* index.html booking section h2 */
+  #booking h2[style*="font-size: 3rem"] {
+    font-size: 1.8rem !important;
+  }
 }

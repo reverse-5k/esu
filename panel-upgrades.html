@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M7VQ7XT9');</script>
+<!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <link rel="canonical" href="https://esucorp.com/panel-upgrades.html">
     <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon.png">
@@ -79,6 +86,10 @@
         .risk-banner i { font-size: 4rem; opacity: 0.8; }
         .risk-banner h3 { color: white; font-size: 1.8rem; margin-bottom: 10px; }
         .risk-banner p { opacity: 0.9; max-width: 600px; font-size: 1.1rem; }
+        .surge-addon-box { display: flex; gap: 24px; align-items: flex-start; }
+        @media (max-width: 600px) {
+            .surge-addon-box { flex-direction: column; padding: 28px 20px !important; }
+        }
         .compare-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 8px; }
         .compare-table { width: 100%; border-collapse: collapse; margin: 40px 0; font-size: 1rem; min-width: 480px; }
         .compare-table th { padding: 15px; text-align: left; font-family: var(--font-heading); font-size: 1.1rem; }
@@ -98,6 +109,9 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7VQ7XT9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- Sticky Mobile CTA -->
     <div class="mobile-sticky-cta">
@@ -105,33 +119,8 @@
     </div>
 
     <!-- Header -->
-    <div class="top-bar">
-        <div class="contact-info">
-            <i class="fa-solid fa-phone"></i> <a href="tel:+17869304300">786-930-4300</a>
-        </div>
-        <div class="hours">
-            <i class="fa-solid fa-bolt" style="color: var(--primary-orange);"></i> 24/7 Emergency Service
-        </div>
-    </div>
+    <div id="site-header"></div>
 
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" class="logo-img" alt="ESU — Electrical Services Unlimited">
-            </a>
-            <button class="mobile-menu-btn" aria-label="Open navigation menu"><i class="fa-solid fa-bars"></i></button>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="residential.html" class="active">RESIDENTIAL</a></li>
-                    <li><a href="commercial.html">COMMERCIAL</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                </ul>
-            </nav>
-            <a href="https://book.housecallpro.com/book/Electrical-Services-Unlimited-Inc/d801ffee143e4632b666c0e8850097f8" target="_blank" rel="noopener" class="btn btn-primary">Book Online</a>
-        </div>
-    </header>
 
     <!-- Landing Hero -->
     <section class="landing-hero">
@@ -143,7 +132,7 @@
             <p>Outdated electrical panels are a massive fire hazard. If your home is struggling to keep up with modern power demands, don't wait for a total failure. We provide fast, guaranteed panel upgrades with zero hidden fees.</p>
             
             <ul class="feature-list">
-                <li><i class="fa-solid fa-shield-check"></i> 100% Satisfaction Guarantee</li>
+                <li><i class="fa-solid fa-shield-halved"></i> 100% Satisfaction Guarantee</li>
                 <li><i class="fa-solid fa-clock"></i> Prompt, Professional Service</li>
                 <li><i class="fa-solid fa-clipboard-check"></i> Up-Front Pricing. No Surprises.</li>
             </ul>
@@ -200,11 +189,11 @@
     </section>
 
     <section class="section bg-light" style="padding-top: 0;">
-        <div style="max-width: 800px; margin: 0 auto; background: #fff8e1; border: 2px solid #f0c040; border-radius: 10px; padding: 36px 44px; display: flex; gap: 24px; align-items: flex-start;">
-            <i class="fa-solid fa-shield-check" style="color: #f0b000; font-size: 2.5rem; flex-shrink: 0; margin-top: 4px;"></i>
+        <div class="surge-addon-box" style="max-width: 800px; margin: 0 auto; background: #fff8e1; border: 2px solid #f0c040; border-radius: 10px; padding: 36px 44px;">
+            <i class="fa-solid fa-shield-halved" style="color: #f0b000; font-size: 2.5rem; flex-shrink: 0; margin-top: 4px;"></i>
             <div>
-                <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: var(--primary-navy);">Your New Panel Needs Surge Protection</h3>
-                <p style="color: #555; font-size: 1rem; line-height: 1.65; margin-bottom: 12px;">The 2023 National Electrical Code (Section 230.67) requires surge protection on all new residential electrical services. We include it as standard on every panel upgrade we do. It takes about 30 minutes to install and protects your HVAC, appliances, and electronics from the day your new panel goes live.</p>
+                <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: var(--primary-navy);">Ask About Adding Surge Protection</h3>
+                <p style="color: #555; font-size: 1rem; line-height: 1.65; margin-bottom: 12px;">A panel upgrade is a great time to add whole-home surge protection. The 2023 NEC (Section 230.67) now requires surge protection on new residential electrical services, and we strongly recommend it as an add-on — it takes about 30 minutes to install alongside your panel and shields your HVAC, appliances, and electronics from day one. Ask us about adding it to your panel upgrade quote.</p>
                 <a href="surge-protection.html" style="color: var(--primary-orange); font-weight: 700; font-size: 0.95rem;">Learn about whole-home surge protection &rarr;</a>
             </div>
         </div>
@@ -273,7 +262,7 @@
             <p style="color: #666; margin-bottom: 35px; font-size: 1.05rem;">Fill out the form and we'll get back to you within the hour. For emergencies, call <a href="tel:+17869304300" style="color: var(--primary-orange); font-weight: 700;">786-930-4300</a>.</p>
             <!--Start of Housecallpro Lead Capture code-->
             <script async src="https://online-booking.housecallpro.com/script.js?token=af21886fa67949b0a092483df1175317&orgName=Electrical-Services-Unlimited-Inc"></script>
-            <iframe style="border: none; width: 100%;" id="hcp-lead-iframe" src="https://book.housecallpro.com/lead-form/Electrical-Services-Unlimited-Inc/af21886fa67949b0a092483df1175317" height="650" title="Request a Panel Upgrade Estimate"></iframe>
+            <iframe style="border: none; width: 100%; max-width: 500px; display: block; margin: 0 auto;" id="hcp-lead-iframe" src="https://book.housecallpro.com/lead-form/Electrical-Services-Unlimited-Inc/af21886fa67949b0a092483df1175317" height="900" scrolling="no" title="Request a Panel Upgrade Estimate"></iframe>
             <!--End of Housecallpro Lead Capture code-->
         </div>
     </section>
@@ -281,7 +270,7 @@
     <!-- Final CTA -->
     <section class="section bg-dark" style="text-align: center;">
         <div class="reveal">
-            <h2 style="font-size: 3rem; margin-bottom: 20px;">Ready to Secure Your Home?</h2>
+            <h2 style="font-size: 3rem; margin-bottom: 20px; color: white;">Ready to Secure Your Home?</h2>
             <p style="font-size: 1.4rem; margin-bottom: 40px; opacity: 0.9;">Don't wait for an emergency. Schedule your full panel inspection today.</p>
             <a href="tel:+17869304300" class="btn btn-primary" style="font-size: 1.5rem; padding: 20px 50px; box-shadow: 0 10px 30px rgba(241, 144, 28, 0.5);"><i class="fa-solid fa-phone"></i> CALL 786-930-4300</a>
         </div>

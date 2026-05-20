@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M7VQ7XT9');</script>
+<!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <link rel="canonical" href="https://esucorp.com/commercial-buildouts.html">
     <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon.png">
@@ -208,51 +215,32 @@
         .timeline-step h3 { color: var(--primary-navy); font-size: 1.1rem; margin-bottom: 10px; }
         .timeline-step p { font-size: 0.95rem; color: #666; line-height: 1.65; margin: 0; }
 
-        @media (max-width: 700px) {
-            .process-timeline { grid-template-columns: 1fr; }
-            .process-timeline::before { display: none; }
-            .stat-strip { gap: 30px; }
-        }
         @media (max-width: 960px) {
             .process-timeline { grid-template-columns: 1fr; }
             .process-timeline::before { display: none; }
         }
+        @media (max-width: 768px) {
+            .buildout-hero { padding: 70px 5% 60px; }
+            .stat-strip { gap: 30px; flex-direction: column; align-items: center; padding: 36px 5%; }
+            .stat-strip-item { width: 100%; max-width: 260px; }
+            .stat-strip-item .stat-val { font-size: 2rem; }
+        }
+        @media (max-width: 700px) {
+            .process-timeline { grid-template-columns: 1fr; }
+            .process-timeline::before { display: none; }
+        }
+        @media (max-width: 480px) {
+            .buildout-hero { padding: 50px 5% 44px; }
+            .stat-strip-item .stat-val { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7VQ7XT9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="site-header"></div>
 
-    <div class="mobile-sticky-cta">
-        <a href="tel:+17869304300"><i class="fa-solid fa-phone"></i> Call 786-930-4300 Now</a>
-    </div>
-
-    <div class="top-bar">
-        <div class="contact-info">
-            <i class="fa-solid fa-phone"></i> <a href="tel:+17869304300">786-930-4300</a>
-        </div>
-        <div>
-            <i class="fa-solid fa-bolt" style="color: var(--primary-orange);"></i> 24/7 Emergency Service
-        </div>
-    </div>
-
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" class="logo-img" alt="ESU — Electrical Services Unlimited">
-            </a>
-            <button class="mobile-menu-btn" aria-label="Open navigation menu"><i class="fa-solid fa-bars"></i></button>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="residential.html">RESIDENTIAL</a></li>
-                    <li><a href="commercial.html" class="active">COMMERCIAL</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="tips.html">TIPS</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                </ul>
-            </nav>
-            <a href="tel:+17869304300" class="btn btn-primary"><i class="fa-solid fa-phone"></i>&nbsp; 786-930-4300</a>
-        </div>
-    </header>
 
     <section class="buildout-hero reveal">
         <div class="badge">Commercial Tenant Improvements & Buildouts</div>
@@ -458,14 +446,14 @@
             <p style="color: #666; margin-bottom: 35px; font-size: 1.05rem;">Tell us your project scope, square footage, and timeline. We typically respond within a few hours. For urgent needs, call <a href="tel:+17869304300" style="color: var(--primary-orange); font-weight: 700;">786-930-4300</a>.</p>
             <!--Start of Housecallpro Lead Capture code-->
             <script async src="https://online-booking.housecallpro.com/script.js?token=af21886fa67949b0a092483df1175317&orgName=Electrical-Services-Unlimited-Inc"></script>
-            <iframe style="border: none; width: 100%;" id="hcp-lead-iframe" src="https://book.housecallpro.com/lead-form/Electrical-Services-Unlimited-Inc/af21886fa67949b0a092483df1175317" height="650" title="Request a Commercial Buildout Quote"></iframe>
+            <iframe style="border: none; width: 100%; max-width: 500px; display: block; margin: 0 auto;" id="hcp-lead-iframe" src="https://book.housecallpro.com/lead-form/Electrical-Services-Unlimited-Inc/af21886fa67949b0a092483df1175317" height="900" scrolling="no" title="Request a Commercial Buildout Quote"></iframe>
             <!--End of Housecallpro Lead Capture code-->
         </div>
     </section>
 
     <section class="section bg-dark" style="text-align: center;">
         <div class="reveal">
-            <h2 style="font-size: 3rem; margin-bottom: 20px;">Have a Project That Needs Quoting?</h2>
+            <h2 style="font-size: 3rem; margin-bottom: 20px; color: white;">Have a Project That Needs Quoting?</h2>
             <p style="font-size: 1.3rem; margin-bottom: 40px; opacity: 0.9;">Call us with your scope or send drawings. Written estimate back within 24–48 hours.</p>
             <a href="tel:+17869304300" class="btn btn-primary" style="font-size: 1.5rem; padding: 20px 50px; box-shadow: 0 10px 30px rgba(241, 144, 28, 0.5);"><i class="fa-solid fa-phone"></i> CALL 786-930-4300</a>
         </div>

@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M7VQ7XT9');</script>
+<!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <link rel="canonical" href="https://esucorp.com/electrical-repairs.html">
     <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon.png">
@@ -78,9 +85,16 @@
             padding: 44px 20px;
             flex-wrap: wrap;
         }
+        @media (max-width: 768px) {
+            .stat-strip { flex-direction: column; align-items: center; }
+            .stat-item { width: 100%; max-width: 260px; }
+        }
         @media (max-width: 600px) {
-            .stat-strip { gap: 32px; padding: 36px 20px; }
+            .stat-strip { gap: 32px; padding: 36px 5%; }
             .stat-num { font-size: 2.8rem; }
+        }
+        @media (max-width: 480px) {
+            .stat-num { font-size: 2.2rem; }
         }
         .stat-item { text-align: center; }
         .stat-num {
@@ -131,37 +145,11 @@
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7VQ7XT9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="site-header"></div>
 
-    <div class="mobile-sticky-cta">
-        <a href="tel:+17869304300"><i class="fa-solid fa-phone"></i> Call 786-930-4300 Now</a>
-    </div>
-
-    <div class="top-bar">
-        <div class="contact-info">
-            <i class="fa-solid fa-phone"></i> <a href="tel:+17869304300">786-930-4300</a>
-        </div>
-        <div class="hours">
-            <i class="fa-solid fa-bolt" style="color: var(--primary-orange);"></i> 24/7 Emergency Service
-        </div>
-    </div>
-
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" class="logo-img" alt="ESU — Electrical Services Unlimited">
-            </a>
-            <button class="mobile-menu-btn" aria-label="Open navigation menu"><i class="fa-solid fa-bars"></i></button>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="residential.html" class="active">RESIDENTIAL</a></li>
-                    <li><a href="commercial.html">COMMERCIAL</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
     <section class="landing-hero">
         <div class="reveal-left">
@@ -169,7 +157,7 @@
             <p>Electrical issues aren't just inconvenient. They're dangerous. Don't risk a DIY fix. Our state-certified experts arrive on time, diagnose the problem immediately, and fix it correctly, every time.</p>
 
             <ul class="feature-list">
-                <li><i class="fa-solid fa-shield-check"></i> 24/7 Emergency Dispatch</li>
+                <li><i class="fa-solid fa-shield-halved"></i> 24/7 Emergency Dispatch</li>
                 <li><i class="fa-solid fa-clock"></i> Prompt Emergency Response</li>
                 <li><i class="fa-solid fa-clipboard-check"></i> Up-Front Pricing Before We Start</li>
             </ul>
@@ -274,14 +262,14 @@
             <p style="color: #666; margin-bottom: 35px; font-size: 1.05rem;">Fill out the form and we'll get back to you within the hour. For emergencies, call <a href="tel:+17869304300" style="color: var(--primary-orange); font-weight: 700;">786-930-4300</a>.</p>
             <!--Start of Housecallpro Lead Capture code-->
             <script async src="https://online-booking.housecallpro.com/script.js?token=af21886fa67949b0a092483df1175317&orgName=Electrical-Services-Unlimited-Inc"></script>
-            <iframe style="border: none; width: 100%;" id="hcp-lead-iframe" src="https://book.housecallpro.com/lead-form/Electrical-Services-Unlimited-Inc/af21886fa67949b0a092483df1175317" height="650" title="Request a Free Estimate"></iframe>
+            <iframe style="border: none; width: 100%; max-width: 500px; display: block; margin: 0 auto;" id="hcp-lead-iframe" src="https://book.housecallpro.com/lead-form/Electrical-Services-Unlimited-Inc/af21886fa67949b0a092483df1175317" height="900" scrolling="no" title="Request a Free Estimate"></iframe>
             <!--End of Housecallpro Lead Capture code-->
         </div>
     </section>
 
     <section class="section bg-dark" style="text-align: center;">
         <div class="reveal">
-            <h2 style="font-size: 3rem; margin-bottom: 20px;">Need Help Right Now?</h2>
+            <h2 style="font-size: 3rem; margin-bottom: 20px; color: white;">Need Help Right Now?</h2>
             <p style="font-size: 1.4rem; margin-bottom: 40px; opacity: 0.9;">Our dispatchers are standing by 24/7. Get your power restored safely today.</p>
             <a href="tel:+17869304300" class="btn btn-primary" style="font-size: 1.5rem; padding: 20px 50px; box-shadow: 0 10px 30px rgba(241, 144, 28, 0.5);"><i class="fa-solid fa-phone"></i> CALL 786-930-4300</a>
         </div>
